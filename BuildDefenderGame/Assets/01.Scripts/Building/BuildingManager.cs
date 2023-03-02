@@ -10,10 +10,14 @@ public class BuildingManager : MonoBehaviour
     // private int _currentIndex;
 
     private Camera _mainCamera;
-    private void Start() {
-        _mainCamera = Camera.main;
+
+    private void Awake() {
         _buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
         _buildingType = _buildingTypeList.list[0];
+    }
+    
+    private void Start() {
+        _mainCamera = Camera.main;
     }
 
     private void Update()

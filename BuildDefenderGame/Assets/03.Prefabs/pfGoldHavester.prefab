@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4077305481492632304}
+  - component: {fileID: 8432540954256652356}
+  - component: {fileID: -2596633406636603041}
   m_Layer: 0
   m_Name: pfGoldHavester
   m_TagString: Untagged
@@ -32,6 +34,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8432540954256652356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077305481492632307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e67ff6a8695e24f8be77577ad29c47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2596633406636603041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077305481492632307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb48bbcaaf69ab49b59dafcdadad22d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <BuildingType>k__BackingField: {fileID: 11400000, guid: 436cc41635f9c80478881316f4c30134, type: 2}
 --- !u!1 &4077305483034637227
 GameObject:
   m_ObjectHideFlags: 0
