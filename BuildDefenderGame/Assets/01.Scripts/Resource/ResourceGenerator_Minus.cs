@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // [RequireComponent(typeof(Holder))]
-public class ResourceGenerator : MonoBehaviour
+public class ResourceGenerator_Minus : MonoBehaviour
 {
     private BuildingTypeSO _buildingType;
     private float _timer;
@@ -20,7 +20,7 @@ public class ResourceGenerator : MonoBehaviour
         if(_timer <= 0)
         {
             _timer += _timerMax;
-            ResourceManager.Instance.AddResource(_buildingType.resourceGeneratorData.resourceType, 1);
+            ResourceManager.Instance.AddResource(_buildingType.resourceGeneratorData.resourceType, -1);
             //Debug.Log(_buildingType.resourceGeneratorData.resourceType.nameString);
         }
     }

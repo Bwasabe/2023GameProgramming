@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
+    public static ResourceManager Instance{ get; private set;}
+
     private Dictionary<ResourceTypeSO, int> _resourceAmountDictionary;
 
     private void Awake()
     {
+        Instance = this;
         _resourceAmountDictionary = new();
 
         ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(nameof(ResourceTypeListSO));
@@ -21,23 +24,29 @@ public class ResourceManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(nameof(ResourceTypeListSO));
-            AddResource(resourceTypeList.list[0], 1);
-        }
+        // if (Input.GetKeyDown(KeyCode.Q))
+        // {
+        //     ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(nameof(ResourceTypeListSO));
+        //     AddResource(resourceTypeList.list[0], 1);
+        // }
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(nameof(ResourceTypeListSO));
-            AddResource(resourceTypeList.list[1], 1);
-        }
+        // if (Input.GetKeyDown(KeyCode.W))
+        // {
+        //     ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(nameof(ResourceTypeListSO));
+        //     AddResource(resourceTypeList.list[1], 1);
+        // }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(nameof(ResourceTypeListSO));
-            AddResource(resourceTypeList.list[2], 1);
-        }
+        // if (Input.GetKeyDown(KeyCode.E))
+        // {
+        //     ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(nameof(ResourceTypeListSO));
+        //     AddResource(resourceTypeList.list[2], 1);
+        // }
+
+        // if(Input.GetKeyDown(KeyCode.R))
+        // {
+        //     ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(nameof(ResourceTypeListSO));
+        //     AddResource(resourceTypeList.list[3], 1);
+        // }
     }
 
     private void TestLogResourceAmountDictionary()

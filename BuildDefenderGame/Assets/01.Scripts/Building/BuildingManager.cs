@@ -40,7 +40,10 @@ public class BuildingManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             _buildingType = _buildingTypeList.list[2];
-
+        }
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            _buildingType = _buildingTypeList.list[3];
         }
         // for (int i = 0; i < _buildingTypeList.list.Count; ++i)
         // {
