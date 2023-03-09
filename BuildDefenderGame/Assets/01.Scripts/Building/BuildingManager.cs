@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BuildingManager : MonoBehaviour
 {
+    public static BuildingManager Instance{ get; private set; }
     private BuildingTypeListSO _buildingTypeList;
-    private BuildingTypeSO _buildingType;
+    private BuildingTypeSO _activeBuidingType;
 
     // private int _currentIndex;
 
     private Camera _mainCamera;
 
     private void Awake() {
+        Instance = this;
         _buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
-        _buildingType = _buildingTypeList.list[0];
+        _activeBuidingType = _buildingTypeList.list[0];
     }
     
     private void Start() {
@@ -22,34 +25,24 @@ public class BuildingManager : MonoBehaviour
 
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            Instantiate(_buildingType.prefab, GetMouseWorldPosition(), Quaternion.identity);
+            if(_activeBuidingType != null)
+            {
+                Instantiate(_activeBuidingType.prefab, GetMouseWorldPosition(), Quaternion.identity);
+            }
         }
 
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            _buildingType = _buildingTypeList.list[0];
-        }
-        if(Input.GetKeyDown(KeyCode.W))
-        {
-            _buildingType = _buildingTypeList.list[1];
+    }
 
-        }
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            _buildingType = _buildingTypeList.list[2];
-        }
-        // for (int i = 0; i < _buildingTypeList.list.Count; ++i)
-        // {
-        //     if (Input.GetKeyDown(_buildingTypeList.list[i].keycode))
-        //     {
-        //         _currentIndex = _buildingTypeList.list[i].index;
-        //     }
-        // }
+    public void SetActiveBuildingType(BuildingTypeSO buildingType)
+    {
+        _activeBuidingType = buildingType;
+    }
 
-
+    public BuildingTypeSO GetActiveBuildingType()
+    {
+        return _activeBuidingType;
     }
 
     private Vector3 GetMouseWorldPosition()
