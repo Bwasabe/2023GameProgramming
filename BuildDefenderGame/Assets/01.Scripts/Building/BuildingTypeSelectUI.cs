@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,9 @@ public class BuildingTypeSelectUI : MonoBehaviour
     [SerializeField]
     private Sprite _arrowSprite;
     private BuildingTypeListSO _buildingTypeList;
+
+    [SerializeField]
+    private List<BuildingTypeSO> _ignoreBuldingTypeList;
 
     private Dictionary<BuildingTypeSO, Transform> _btnTransfromDict;
 
@@ -35,7 +39,7 @@ public class BuildingTypeSelectUI : MonoBehaviour
         _arrowBtn.GetComponent<RectTransform>().anchoredPosition = new Vector2(index * offsetAmount, 0);
 
         _arrowBtn.Find("Image").GetComponent<Image>().sprite = _arrowSprite;
-        _arrowBtn.Find("Image").GetComponent<RectTransform>().sizeDelta = new Vector2(1145.844f, -662.213f);
+        _arrowBtn.Find("Image").GetComponent<RectTransform>().sizeDelta = new Vector2(65.4623f, 85.1729f);
 
         _arrowBtn.GetComponent<Button>().onClick.AddListener(() =>
         {
@@ -46,6 +50,8 @@ public class BuildingTypeSelectUI : MonoBehaviour
 
         foreach (BuildingTypeSO buildingType in _buildingTypeList.list)
         {
+            if(_ignoreBuldingTypeList.Contains(buildingType))continue;
+            
             Transform btnTransform = Instantiate(btnTemplate, transform);
             btnTransform.gameObject.SetActive(true);
 
@@ -63,10 +69,16 @@ public class BuildingTypeSelectUI : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void Start() {
+        UpdateActiveBuildingTypeBtn();
+        BuildingManager.Instance.OnActiveBuildingTypeChanged += BuildingManager_OnActiveBuildingTypeChanged;
+    }
+
+    private void BuildingManager_OnActiveBuildingTypeChanged(object sender, BuildingManager.OnActiveBuildingTypeEventArgs e)
     {
         UpdateActiveBuildingTypeBtn();
     }
+
 
     private void UpdateActiveBuildingTypeBtn()
     {
