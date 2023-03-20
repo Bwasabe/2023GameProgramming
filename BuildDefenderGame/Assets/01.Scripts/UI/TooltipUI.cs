@@ -17,6 +17,8 @@ public class TooltipUI : MonoBehaviour
 
     private RectTransform _rectTransform;
 
+    private TooltipTimer _tooltipTimer;
+
     private void Awake()
     {
         _textMeshPro = transform.Find("Text").GetComponent<TextMeshProUGUI>();
@@ -26,9 +28,53 @@ public class TooltipUI : MonoBehaviour
 
         Instance = this;
         SetText("Hello World");
+        
+        Hide();
     }
 
     private void Update()
+    {
+        HandleFollowMouse();
+        
+        if (_tooltipTimer != null)
+        {
+            _tooltipTimer.timer -= Time.deltaTime;
+            if (_tooltipTimer.timer <= 0)
+            {
+                Hide();
+            }
+        }
+    }
+
+    private void SetText(string tooltipText)
+    {
+        _textMeshPro.SetText(tooltipText);
+        _textMeshPro.ForceMeshUpdate();
+        
+        // false를 적는것과 아예 파라미터를 안적는 것이 차이가 크다
+        Vector2 textSize = _textMeshPro.GetRenderedValues(false);
+        Vector2 padding = new Vector2(8, 8);
+        _backgroundRectTransform.sizeDelta = textSize + padding;
+    }
+
+    public void Show(string tooltipText, TooltipTimer timer = null)
+    {
+        _tooltipTimer = timer;
+        gameObject.SetActive(true);
+        SetText(tooltipText: tooltipText);
+        HandleFollowMouse();
+    }
+    public class TooltipTimer
+    {
+        public float timer;
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void HandleFollowMouse()
     {
         Vector2 anchoredPosition = Input.mousePosition/ _canvasRectTransform.localScale.x;
 
@@ -53,27 +99,5 @@ public class TooltipUI : MonoBehaviour
         }
         
         _rectTransform.anchoredPosition = anchoredPosition;
-    }
-
-    private void SetText(string tooltipText)
-    {
-        _textMeshPro.SetText(tooltipText);
-        _textMeshPro.ForceMeshUpdate();
-        
-        // false를 적는것과 아예 파라미터를 안적는 것이 차이가 크다
-        Vector2 textSize = _textMeshPro.GetRenderedValues(false);
-        Vector2 padding = new Vector2(8, 8);
-        _backgroundRectTransform.sizeDelta = textSize + padding;
-    }
-
-    public void Show(string tooltipText)
-    {
-        gameObject.SetActive(true);
-        SetText(tooltipText: tooltipText);
-    }
-
-    public void Hide()
-    {
-        gameObject.SetActive(false);
     }
 }

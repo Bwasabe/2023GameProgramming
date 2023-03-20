@@ -33,17 +33,25 @@ private BuildingTypeListSO _buildingTypeList;
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && !EventSystem.current.IsPointerOverGameObject()  )
         {
-            if(_activeBuidingType != null&& 
-               CanSpawnBuilding(_activeBuidingType,UtilClass.GetMouseWorldPosition()) )
+            if(_activeBuidingType != null)
             {
-                if(ResourceManager.Instance.CanAfford(_activeBuidingType.constructionResourceCostArray))
+                if(CanSpawnBuilding(_activeBuidingType,UtilClass.GetMouseWorldPosition(), out string errorMessage))
                 {
-                    ResourceManager.Instance.SpendResources(_activeBuidingType.constructionResourceCostArray);
-                    Instantiate(_activeBuidingType.prefab, UtilClass.GetMouseWorldPosition(), Quaternion.identity);
+                    if(ResourceManager.Instance.CanAfford(_activeBuidingType.constructionResourceCostArray))
+                    {
+                        ResourceManager.Instance.SpendResources(_activeBuidingType.constructionResourceCostArray);
+                        Instantiate(_activeBuidingType.prefab, UtilClass.GetMouseWorldPosition(), Quaternion.identity);
+                    }
+                    else
+                    {
+                        TooltipUI.Instance.Show("자원 부족 : " + _activeBuidingType.GetConstructionResourceCostString());
+                    }
+                }
+                else
+                {
+                    TooltipUI.Instance.Show(errorMessage, new TooltipUI.TooltipTimer(){timer = 2f});
                 }
             }
-
-            Debug.Log("스폰할 수 있는가? : " +CanSpawnBuilding(_activeBuidingType,UtilClass.GetMouseWorldPosition()));
         }
 
     }
@@ -59,15 +67,19 @@ private BuildingTypeListSO _buildingTypeList;
         return _activeBuidingType;
     }
 
-    private bool CanSpawnBuilding(BuildingTypeSO buildingType, Vector3 position)
+    private bool CanSpawnBuilding(BuildingTypeSO buildingType, Vector3 position, out string errorMessage)
     {
         BoxCollider2D boxCollider2D = buildingType.prefab.GetComponent<BoxCollider2D>();
 
         Collider2D[] collider2DArray = Physics2D.OverlapBoxAll(position + (Vector3)boxCollider2D.offset, boxCollider2D.size , 0f);
 
         bool isAreaClear = collider2DArray.Length == 0;
-        
-        if(!isAreaClear)return false;
+
+        if(!isAreaClear)
+        {
+            errorMessage = "건물을 놓을 수 없는 곳입니다.";
+            return false;    
+        }
 
         collider2DArray = Physics2D.OverlapCircleAll(position, _activeBuidingType.minConstructionRadius);
 
@@ -78,6 +90,7 @@ private BuildingTypeListSO _buildingTypeList;
             {
                 if(buildingTypeHolder.BuildingType == _activeBuidingType)
                 {
+                    errorMessage = "같은 유형의 건물이 주변에 있습니다.";
                     return false;
                 }
             }
@@ -91,10 +104,12 @@ private BuildingTypeListSO _buildingTypeList;
             BuildingTypeHolder buildingTypeHolder = collider2D.GetComponent<BuildingTypeHolder>();
             if(buildingTypeHolder != null)
             {
+                errorMessage = "";
                 return true;
             }
         }
 
+        errorMessage = "다른 건물이 주변에 있어야 합니다.";
         return false;
     }
     
