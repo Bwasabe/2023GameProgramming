@@ -23,7 +23,6 @@ private BuildingTypeListSO _buildingTypeList;
     private void Awake() {
         Instance = this;
         _buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
-        _activeBuidingType = _buildingTypeList.list[0];
     }
     
     private void Start() {
@@ -32,12 +31,16 @@ private BuildingTypeListSO _buildingTypeList;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !EventSystem.current.IsPointerOverGameObject() && 
-            CanSpawnBuilding(_activeBuidingType,UtilClass.GetMouseWorldPosition()))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !EventSystem.current.IsPointerOverGameObject()  )
         {
-            if(_activeBuidingType != null)
+            if(_activeBuidingType != null&& 
+               CanSpawnBuilding(_activeBuidingType,UtilClass.GetMouseWorldPosition()) )
             {
-                Instantiate(_activeBuidingType.prefab, UtilClass.GetMouseWorldPosition(), Quaternion.identity);
+                if(ResourceManager.Instance.CanAfford(_activeBuidingType.constructionResourceCostArray))
+                {
+                    ResourceManager.Instance.SpendResources(_activeBuidingType.constructionResourceCostArray);
+                    Instantiate(_activeBuidingType.prefab, UtilClass.GetMouseWorldPosition(), Quaternion.identity);
+                }
             }
 
             Debug.Log("스폰할 수 있는가? : " +CanSpawnBuilding(_activeBuidingType,UtilClass.GetMouseWorldPosition()));
