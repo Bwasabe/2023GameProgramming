@@ -13,6 +13,9 @@ public class BuildingManager : MonoBehaviour
         public BuildingTypeSO BuildingType;
     }
 
+    [SerializeField]
+    private Building _hqBuilding;
+
 private BuildingTypeListSO _buildingTypeList;
     private BuildingTypeSO _activeBuidingType;
 
@@ -52,6 +55,13 @@ private BuildingTypeListSO _buildingTypeList;
                     TooltipUI.Instance.Show(errorMessage, new TooltipUI.TooltipTimer(){timer = 2f});
                 }
             }
+        }
+
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            Vector3 enemySpawnPosition = UtilClass.GetMouseWorldPosition() + UtilClass.GetRandomDir() * 5f;
+            Enemy.Create(enemySpawnPosition);
+            
         }
 
     }
@@ -111,6 +121,11 @@ private BuildingTypeListSO _buildingTypeList;
 
         errorMessage = "다른 건물이 주변에 있어야 합니다.";
         return false;
+    }
+
+    public Building GetHQBuidling()
+    {
+        return _hqBuilding;
     }
     
 }

@@ -43,6 +43,7 @@ public class ResourceGenerator : MonoBehaviour
         if(nearbyResourceAmount == 0)
         {
             transform.Find("pfResourceGeneratorOverlay").gameObject.SetActive(false);
+            transform.GetComponentInChildren<Animator>().enabled = false;
             enabled = false;
         }
         else
@@ -51,7 +52,6 @@ public class ResourceGenerator : MonoBehaviour
                 (1 - (float)nearbyResourceAmount / _resourceGeneratorData.maxResourceAmount);
         }
 
-        Debug.Log("주변 리소스 노드의 갯수 : " + nearbyResourceAmount);
     }
 
     private void Update()
