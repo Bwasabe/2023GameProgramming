@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public static class UtilClass
@@ -13,6 +11,14 @@ public static class UtilClass
         mouseWorldPosition.z = 0f;
 
         return mouseWorldPosition;
+    }
+
+    public static float GetAngleFromVector(Vector3 vector)
+    {
+        float radians = Mathf.Atan2(vector.y, vector.x);
+        float degrees = radians * Mathf.Rad2Deg;
+
+        return degrees;
     }
 
     public static Vector3 GetRandomDir()

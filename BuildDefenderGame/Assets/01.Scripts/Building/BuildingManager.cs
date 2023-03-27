@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System;
@@ -56,14 +54,6 @@ private BuildingTypeListSO _buildingTypeList;
                 }
             }
         }
-
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            Vector3 enemySpawnPosition = UtilClass.GetMouseWorldPosition() + UtilClass.GetRandomDir() * 5f;
-            Enemy.Create(enemySpawnPosition);
-            
-        }
-
     }
 
     public void SetActiveBuildingType(BuildingTypeSO buildingType)

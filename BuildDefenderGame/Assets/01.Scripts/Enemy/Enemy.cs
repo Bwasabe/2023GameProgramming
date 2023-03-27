@@ -1,11 +1,13 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(HealthSystem))]
 public class Enemy : MonoBehaviour
 {
+    private HealthSystem _healthSystem;
+    
     public static Enemy Create(Vector3 position)
     {
         Transform pfEnemy = Resources.Load<Transform>("pfEnemy");
@@ -25,18 +27,27 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         _enemyRigidbody2D = GetComponent<Rigidbody2D>();
+
+        _healthSystem = GetComponent<HealthSystem>();
     }
 
     private void Start()
     {
-        _targetTransform = BuildingManager.Instance.GetHQBuidling().transform;
+        if(BuildingManager.Instance.GetHQBuidling() != null)
+            _targetTransform = BuildingManager.Instance.GetHQBuidling().transform;
+
+        _healthSystem.OnDied += HealthSystem_OnDied;
         _lookForTargetTimer = Random.Range(0f, _lookForTargetTimerMax);
+    }
+    private void HealthSystem_OnDied(object sender, EventArgs e)
+    {
+        Destroy(gameObject);
     }
 
     private void Update()
     {
         HandleMovement();
-        HandleTargetting();
+        HandleTargeting();
     }
 
     private void HandleMovement()
@@ -55,7 +66,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void HandleTargetting()
+    private void HandleTargeting()
     { 
         _lookForTargetTimer -= Time.deltaTime;
         if(_lookForTargetTimer < 0)
@@ -104,7 +115,8 @@ public class Enemy : MonoBehaviour
 
         if(_targetTransform == null)
         {
-            _targetTransform = BuildingManager.Instance.GetHQBuidling().transform;
+            if(BuildingManager.Instance.GetHQBuidling() != null)
+                _targetTransform = BuildingManager.Instance.GetHQBuidling().transform;
         }
     }
 }

@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +10,9 @@ public class ResourceManager : MonoBehaviour
 
     private Dictionary<ResourceTypeSO, int> _resourceAmountDictionary;
 
+    [SerializeField]
+    private List<ResourceAmount> _startingResourceAmountList;
+    
     private void Awake()
     {
         Instance = this;
@@ -21,6 +23,11 @@ public class ResourceManager : MonoBehaviour
         foreach (ResourceTypeSO resourceType in resourceTypeList.list)
         {
             _resourceAmountDictionary[resourceType] = 0;
+        }
+
+        foreach (ResourceAmount resourceAmount in _startingResourceAmountList)
+        {
+            AddResource(resourceAmount.resourceTypeSo, resourceAmount.amount);
         }
     }
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu( menuName = "ScriptableObject/BuildingType", fileName = "BuildingType")]
@@ -9,6 +7,7 @@ public class BuildingTypeSO : ScriptableObject
     // public int index;
     public string nameString;
     public Transform prefab;
+    public bool hasResourceGeneratorData;
     public ResourceGeneratorData resourceGeneratorData;
     public Sprite sprite;
     public float minConstructionRadius;

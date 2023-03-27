@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingGhost : MonoBehaviour
@@ -30,7 +27,10 @@ public class BuildingGhost : MonoBehaviour
         else
         {
             Show(e.BuildingType.sprite);
-            _resourceNearbyOverlay.Show(e.BuildingType.resourceGeneratorData);
+            if(e.BuildingType.hasResourceGeneratorData)
+                _resourceNearbyOverlay.Show(e.BuildingType.resourceGeneratorData);
+            else
+                _resourceNearbyOverlay.Hide();
         }
     }
     void Update()
