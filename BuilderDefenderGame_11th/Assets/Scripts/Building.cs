@@ -15,12 +15,33 @@ public class Building : MonoBehaviour
     private void Awake()
     {
         buildingDemolishBtn = transform.Find("pfBuildingDemolishBtn");
-        buildingDemolishBtn.gameObject.SetActive(false);
+        HideBuildingDemolishBtn();
     }
 
     private void OnMouseEnter()
     {
-        
+        ShowBuildingDemolishBtn();
+    }
+
+    private void ShowBuildingDemolishBtn()
+    {
+        if(buildingDemolishBtn != null)
+        {
+            buildingDemolishBtn.gameObject.SetActive(true);
+        }
+    }
+
+    private void HideBuildingDemolishBtn()
+    {
+        if(buildingDemolishBtn != null)
+        {
+            buildingDemolishBtn.gameObject.SetActive(false);
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        HideBuildingDemolishBtn();
     }
     void Start()
     {
