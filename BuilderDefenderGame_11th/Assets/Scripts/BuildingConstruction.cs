@@ -1,29 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingConstruction : MonoBehaviour
 {
-    public static BuildingConstruction Create(Vector3 position, BuildingTypeSO buildingType)
-    {
-        Transform pfBuildingConstruction = Resources.Load<Transform>("pfBuildingConstruction");
-        Transform buildingConstructionTransform = Instantiate(pfBuildingConstruction, position, Quaternion.identity);
-
-        BuildingConstruction buildingConstruction = buildingConstructionTransform.GetComponent<BuildingConstruction>();
-        buildingConstruction.SetupBuildingType(buildingType);
-        
-
-        return buildingConstruction;
-    }
-
-    private BuildingTypeSO buildingType;
-    private BoxCollider2D boxCollider2D;
-    private SpriteRenderer spriteRenderer;
-    private BuildingTypeHolder buildingTypeHolder;
-    private Material constructionMaterial;
     private float constructionTimer;
     private float constructionTimerMax;
 
+    private BuildingTypeSO buildingType;
+
+    private BoxCollider2D boxCollider2D;
+
+    private SpriteRenderer spriteRenderer;
+
+    private BuildingTypeHolder buildingTypeHolder;
+
+    private Material constructionMaterial;
 
     private void Awake()
     {
@@ -32,24 +25,23 @@ public class BuildingConstruction : MonoBehaviour
         buildingTypeHolder = GetComponent<BuildingTypeHolder>();
         constructionMaterial = spriteRenderer.material;
     }
-    // Update is called once per frame
-    void Update()
+
+    public static BuildingConstruction Create(Vector3 position, BuildingTypeSO buildingType)
     {
-        constructionTimer -= Time.deltaTime;
+        Transform pfBuildingConstruction = Resources.Load<Transform>("pfBuildinConstruction");
+        Transform buildingConstructionTransform = Instantiate(pfBuildingConstruction, position, Quaternion.identity);
 
-        constructionMaterial.SetFloat("_Progress", GetConstructionTimerNormalized());
+        BuildingConstruction buildingConstruction = buildingConstructionTransform.GetComponent<BuildingConstruction>();
+        buildingConstruction.SetBuildingType(buildingType);
 
-        if (constructionTimer <= 0f)
-        {
-            Instantiate(buildingType.prefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
+        return buildingConstruction;
     }
 
-    private void SetupBuildingType(BuildingTypeSO buildingType) 
+    private void SetBuildingType(BuildingTypeSO buildingType)
     {
         this.buildingType = buildingType;
-        this.constructionTimerMax = buildingType.constructionTimerMax;
+
+        constructionTimerMax = buildingType.constructionTimerMax;
         constructionTimer = constructionTimerMax;
 
         boxCollider2D.offset = buildingType.prefab.GetComponent<BoxCollider2D>().offset;
@@ -59,8 +51,22 @@ public class BuildingConstruction : MonoBehaviour
         buildingTypeHolder.buildingType = buildingType;
     }
 
+    private void Update()
+    {
+        constructionTimer -= Time.deltaTime;
+
+        constructionMaterial.SetFloat("_Progress", GetConstructionTimerNormalized());
+        if (constructionTimer <= 0f)
+        {
+            Debug.Log("Ding!");
+            Instantiate(buildingType.prefab, transform.position, Quaternion.identity);
+            SoundManager.Instance.PlaySound(Sound.BuildingPlaced);
+            Destroy(gameObject);
+        }
+    }
+
     public float GetConstructionTimerNormalized()
     {
-        return 1-constructionTimer / constructionTimerMax;
+        return 1 - constructionTimer / constructionTimerMax;
     }
 }

@@ -4,35 +4,24 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-
-    [SerializeField] private float shootTimerMax;
-
-    private float shootTimer;
-    private Enemy targetEnemy;
+    private Enemy targetEnemy = null;
     private float lookForTargetTimer;
     private float lookForTargetTimerMax = .2f;
     private Vector3 projectileSpawnPosition;
+    [SerializeField]
+    private float shootTimerMax;
+
+    private float shootTimer;
 
     private void Awake()
     {
-        projectileSpawnPosition = transform.Find("arrowSpawnPosition").position;   
+        projectileSpawnPosition = transform.Find("projectileSpawnPosition").position;
     }
 
     private void Update()
     {
         HandleTargetting();
         HandleShooting();
-    }
-
-
-    private void HandleTargetting()
-    {
-        lookForTargetTimer -= Time.deltaTime;
-        if (lookForTargetTimer < 0)
-        {
-            lookForTargetTimer += lookForTargetTimerMax;
-            LookForTargets();
-        }
     }
 
     private void LookForTargets()
@@ -58,19 +47,29 @@ public class Tower : MonoBehaviour
                     }
                 }
             }
-        }   
+        }
+    }
+
+    private void HandleTargetting()
+    {
+        lookForTargetTimer -= Time.deltaTime;
+        if (lookForTargetTimer < 0)
+        {
+            lookForTargetTimer += lookForTargetTimerMax;
+            LookForTargets();
+        }
     }
 
     private void HandleShooting()
     {
         shootTimer -= Time.deltaTime;
-        if (shootTimer <= 0f)
+        if(shootTimer <= 0f)
         {
             shootTimer += shootTimerMax;
             if (targetEnemy != null)
             {
                 ArrowProjectile.Create(projectileSpawnPosition, targetEnemy);
             }
-        } 
+        }
     }
 }

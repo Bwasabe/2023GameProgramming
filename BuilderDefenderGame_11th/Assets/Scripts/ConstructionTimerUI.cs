@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class ConstructionTimerUI : MonoBehaviour
 {
-    [SerializeField] private BuildingConstruction buildingConstruction;
+    [SerializeField]
+    private BuildingConstruction buildingConstruction;
 
     private Image constructionProgressImage;
+
     private void Awake()
     {
         constructionProgressImage = transform.Find("mask").Find("image").GetComponent<Image>();
-
     }
 
     private void Update()

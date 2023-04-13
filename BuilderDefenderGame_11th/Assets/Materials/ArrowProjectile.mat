@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ArrowProjectile
-  m_Shader: {fileID: -6465566751694194690, guid: 313968249e5754f499bf70ce9650986e, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: adaf4e70565d1114d92a265962fc1818, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -57,7 +57,7 @@ Material:
     - _EnableExternalAlpha: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.4039888, g: 0.6509434, b: 0.07062123, a: 0}
+    - _EmissionColor: {r: 1, g: 0.4191147, b: 0, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

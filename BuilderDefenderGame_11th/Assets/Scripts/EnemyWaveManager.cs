@@ -1,32 +1,38 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+using Random = UnityEngine.Random;
+
 public class EnemyWaveManager : MonoBehaviour
 {
-    private enum State
-    {
-        WaitingToSpawnNextWave,
-        SpawningWave,
-    }
-
-    public event EventHandler OnWaveNumberChanged;
-
-    [SerializeField] private List<Transform> spawnPositionTransformList;
-    [SerializeField] private Transform nextWaveSpawnPositionTransform;
-    private State state;
-    private int waveNumber;
+    public static EnemyWaveManager Instance { get; private set; }
+    
     private float nextWaveSpawnTimer;
     private float nextEnemySpawnTimer;
     private int remainingEnemySpawnAmount;
     private Vector3 spawnPosition;
+    [SerializeField]
+    private List<Transform> spawnPositionTransformList = new List<Transform>();
+    [SerializeField]
+    private Transform nextWaveSpawnPositionTransform;
+
+    public event EventHandler OnWaveNumberChanged;
+
+    private State state;
+    private int waveNumber;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
+        nextWaveSpawnTimer = 3f;
         state = State.WaitingToSpawnNextWave;
-        spawnPosition = spawnPositionTransformList[UnityEngine.Random.Range(0, spawnPositionTransformList.Count)].position;
+        spawnPosition = spawnPositionTransformList[Random.Range(0, spawnPositionTransformList.Count)].position;
         nextWaveSpawnPositionTransform.position = spawnPosition;
-        nextWaveSpawnTimer = 3f; 
     }
 
     private void Update()
@@ -35,37 +41,47 @@ public class EnemyWaveManager : MonoBehaviour
         {
             case State.WaitingToSpawnNextWave:
                 nextWaveSpawnTimer -= Time.deltaTime;
-                if (nextWaveSpawnTimer < 0f)
+                if (nextWaveSpawnTimer <= 0f)
                 {
                     SpawnWave();
-                    state = State.SpawningWave;
                 }
                 break;
             case State.SpawningWave:
                 if (remainingEnemySpawnAmount > 0)
                 {
                     nextEnemySpawnTimer -= Time.deltaTime;
-                    if (nextEnemySpawnTimer < 0f)
+                    if (nextEnemySpawnTimer <= 0f)
                     {
-                        nextEnemySpawnTimer = UnityEngine.Random.Range(0f, .2f);
-                        Enemy.Create(spawnPosition + UtilClass.GetRandomDir() * UnityEngine.Random.Range(0f, 10f));
+                        nextEnemySpawnTimer = Random.Range(0f, .2f);
+                        Enemy.Create(spawnPosition + UtilClass.GetRandomDir() * Random.Range(0f, 10f));
                         remainingEnemySpawnAmount--;
-                        if (remainingEnemySpawnAmount <= 0)
+                        if(remainingEnemySpawnAmount <= 0)
                         {
                             state = State.WaitingToSpawnNextWave;
-                            spawnPosition = spawnPositionTransformList[UnityEngine.Random.Range(0, spawnPositionTransformList.Count)].position;
+                            spawnPosition = spawnPositionTransformList[Random.Range(0, spawnPositionTransformList.Count)].position;
                             nextWaveSpawnPositionTransform.position = spawnPosition;
                             nextWaveSpawnTimer = 10f;
                         }
                     }
                 }
                 break;
+            default:
+                break;
         }
+    }
+
+    public Vector3 GetSpawnPosition()
+    {
+        return spawnPosition;
     }
 
     private void SpawnWave()
     {
-        remainingEnemySpawnAmount = 5+3* waveNumber;
+        //spawnPosition = spawnPositionTransformList[Random.Range(0, spawnPositionTransformList.Count)].position;
+        //nextWaveSpawnPositionTransform.position = spawnPosition;
+        nextWaveSpawnTimer = 10f;
+        remainingEnemySpawnAmount = 5 + 3 * waveNumber;
+        state = State.SpawningWave;
         waveNumber++;
         OnWaveNumberChanged?.Invoke(this, EventArgs.Empty);
     }
@@ -80,8 +96,9 @@ public class EnemyWaveManager : MonoBehaviour
         return nextWaveSpawnTimer;
     }
 
-    public Vector3 GetSpawnPosition()
+    private enum State
     {
-        return spawnPosition;
+        WaitingToSpawnNextWave,
+        SpawningWave,
     }
 }
