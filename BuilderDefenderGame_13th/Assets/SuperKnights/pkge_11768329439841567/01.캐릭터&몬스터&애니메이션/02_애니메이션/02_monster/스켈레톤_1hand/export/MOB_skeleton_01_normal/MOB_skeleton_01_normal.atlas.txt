@@ -1,0 +1,76 @@
+
+MOB_skeleton_01_normal.png
+size: 292,85
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+normal/arm1_L
+  rotate: false
+  xy: 271, 6
+  size: 19, 38
+  orig: 19, 38
+  offset: 0, 0
+  index: -1
+normal/arm1_R
+  rotate: false
+  xy: 229, 3
+  size: 21, 40
+  orig: 21, 40
+  offset: 0, 0
+  index: -1
+normal/arm2_L
+  rotate: true
+  xy: 152, 15
+  size: 28, 56
+  orig: 28, 56
+  offset: 0, 0
+  index: -1
+normal/arm2_R
+  rotate: true
+  xy: 234, 46
+  size: 37, 51
+  orig: 37, 51
+  offset: 0, 0
+  index: -1
+normal/body
+  rotate: true
+  xy: 152, 45
+  size: 38, 80
+  orig: 38, 80
+  offset: 0, 0
+  index: -1
+normal/head
+  rotate: false
+  xy: 2, 15
+  size: 72, 68
+  orig: 72, 68
+  offset: 0, 0
+  index: -1
+normal/leg_L
+  rotate: false
+  xy: 210, 2
+  size: 17, 41
+  orig: 17, 41
+  offset: 0, 0
+  index: -1
+normal/leg_R
+  rotate: false
+  xy: 252, 2
+  size: 17, 42
+  orig: 17, 42
+  offset: 0, 0
+  index: -1
+normal/shadow
+  rotate: false
+  xy: 76, 7
+  size: 69, 24
+  orig: 72, 29
+  offset: 2, 2
+  index: -1
+normal/weapon
+  rotate: false
+  xy: 76, 33
+  size: 74, 50
+  orig: 74, 50
+  offset: 0, 0
+  index: -1

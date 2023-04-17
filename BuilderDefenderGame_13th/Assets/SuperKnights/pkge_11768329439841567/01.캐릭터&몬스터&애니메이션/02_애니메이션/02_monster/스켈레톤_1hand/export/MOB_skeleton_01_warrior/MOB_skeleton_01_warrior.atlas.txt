@@ -1,0 +1,97 @@
+
+MOB_skeleton_01_warrior.png
+size: 238,148
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+warrior/arm1_L
+  rotate: false
+  xy: 216, 61
+  size: 19, 38
+  orig: 19, 38
+  offset: 0, 0
+  index: -1
+warrior/arm1_R
+  rotate: false
+  xy: 215, 19
+  size: 21, 40
+  orig: 21, 40
+  offset: 0, 0
+  index: -1
+warrior/arm2_L
+  rotate: false
+  xy: 2, 8
+  size: 28, 56
+  orig: 28, 56
+  offset: 0, 0
+  index: -1
+warrior/arm2_R
+  rotate: false
+  xy: 32, 13
+  size: 37, 51
+  orig: 37, 51
+  offset: 0, 0
+  index: -1
+warrior/body
+  rotate: false
+  xy: 2, 66
+  size: 38, 80
+  orig: 38, 80
+  offset: 0, 0
+  index: -1
+warrior/head
+  rotate: false
+  xy: 71, 8
+  size: 72, 68
+  orig: 72, 68
+  offset: 0, 0
+  index: -1
+warrior/helmet_front
+  rotate: false
+  xy: 42, 78
+  size: 81, 68
+  orig: 81, 68
+  offset: 0, 0
+  index: -1
+warrior/helmet_rear
+  rotate: false
+  xy: 145, 49
+  size: 68, 24
+  orig: 68, 24
+  offset: 0, 0
+  index: -1
+warrior/leg_L
+  rotate: false
+  xy: 189, 6
+  size: 17, 41
+  orig: 17, 41
+  offset: 0, 0
+  index: -1
+warrior/leg_R
+  rotate: false
+  xy: 125, 104
+  size: 17, 42
+  orig: 17, 42
+  offset: 0, 0
+  index: -1
+warrior/shadow
+  rotate: false
+  xy: 145, 75
+  size: 69, 24
+  orig: 72, 29
+  offset: 2, 2
+  index: -1
+warrior/shield
+  rotate: false
+  xy: 145, 2
+  size: 42, 45
+  orig: 42, 45
+  offset: 0, 0
+  index: -1
+warrior/weapon
+  rotate: false
+  xy: 145, 101
+  size: 77, 45
+  orig: 77, 45
+  offset: 0, 0
+  index: -1

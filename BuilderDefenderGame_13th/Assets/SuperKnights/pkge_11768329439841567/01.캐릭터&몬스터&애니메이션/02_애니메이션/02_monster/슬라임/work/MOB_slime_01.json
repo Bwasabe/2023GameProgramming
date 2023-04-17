@@ -1,0 +1,24 @@
+{ "skeleton": { "images": "D:/작업/Super Knight/몬스터/슬라임/01/spine/work/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "eye", "bone": "root", "attachment": "eye" }
+],
+"skins": {
+	"default": {
+		"shadow": {
+			"shadow": { "x": 64, "y": -73, "width": 130, "height": 30 }
+		},
+		"body": {
+			"body": { "x": 72, "y": -40.5, "width": 114, "height": 83 }
+		},
+		"eye": {
+			"eye": { "x": 56.5, "y": -26, "width": 55, "height": 46 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

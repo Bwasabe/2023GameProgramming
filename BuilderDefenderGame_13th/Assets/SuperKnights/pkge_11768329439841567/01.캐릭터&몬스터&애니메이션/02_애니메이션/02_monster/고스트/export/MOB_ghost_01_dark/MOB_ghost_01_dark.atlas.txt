@@ -1,0 +1,76 @@
+
+MOB_ghost_01_dark.png
+size: 715,203
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dark/body
+  rotate: false
+  xy: 280, 15
+  size: 119, 186
+  orig: 123, 192
+  offset: 0, 6
+  index: -1
+dark/eye
+  rotate: false
+  xy: 492, 7
+  size: 48, 20
+  orig: 50, 20
+  offset: 2, 0
+  index: -1
+dark/face
+  rotate: false
+  xy: 659, 151
+  size: 42, 50
+  orig: 42, 50
+  offset: 0, 0
+  index: -1
+dark/mouth
+  rotate: false
+  xy: 659, 121
+  size: 54, 28
+  orig: 54, 28
+  offset: 0, 0
+  index: -1
+dark/mouth2
+  rotate: false
+  xy: 659, 104
+  size: 10, 15
+  orig: 10, 15
+  offset: 0, 0
+  index: -1
+dark/shadow
+  rotate: false
+  xy: 401, 6
+  size: 89, 21
+  orig: 94, 26
+  offset: 3, 2
+  index: -1
+manteau_front_1
+  rotate: false
+  xy: 2, 2
+  size: 137, 199
+  orig: 139, 203
+  offset: 2, 0
+  index: -1
+manteau_front_2
+  rotate: false
+  xy: 141, 2
+  size: 137, 199
+  orig: 139, 203
+  offset: 2, 0
+  index: -1
+manteau_rear_1
+  rotate: false
+  xy: 401, 29
+  size: 127, 172
+  orig: 127, 172
+  offset: 0, 0
+  index: -1
+manteau_rear_2
+  rotate: false
+  xy: 530, 29
+  size: 127, 172
+  orig: 127, 172
+  offset: 0, 0
+  index: -1

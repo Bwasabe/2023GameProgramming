@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762326884877466225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0925, y: -0.1569, z: 0.07523059}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 7.082695, y: 5.3414354, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -430,10 +430,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3072303107823962312}
     m_Modifications:
+    - target: {fileID: 1050014667953700400, guid: b6b7ebfa6363fd34e89ef117c452ef4d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179553003187576463, guid: b6b7ebfa6363fd34e89ef117c452ef4d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256232093422320729, guid: b6b7ebfa6363fd34e89ef117c452ef4d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4295036458611734841, guid: b6b7ebfa6363fd34e89ef117c452ef4d, type: 3}
       propertyPath: resourceGenerator
       value: 
       objectReference: {fileID: -7927749303105218250}
+    - target: {fileID: 5305281434886394995, guid: b6b7ebfa6363fd34e89ef117c452ef4d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6483377196773174881, guid: b6b7ebfa6363fd34e89ef117c452ef4d, type: 3}
       propertyPath: m_Name
       value: pfResourceGeneratorOverlay
@@ -623,6 +639,18 @@ PrefabInstance:
     - target: {fileID: 5143781566166812351, guid: c02dba420892767418590cdcad8e7341, type: 3}
       propertyPath: m_SortingLayerID
       value: -326734439
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151141205086813545, guid: c02dba420892767418590cdcad8e7341, type: 3}
+      propertyPath: m_Color.b
+      value: 0.38431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151141205086813545, guid: c02dba420892767418590cdcad8e7341, type: 3}
+      propertyPath: m_Color.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151141205086813545, guid: c02dba420892767418590cdcad8e7341, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8392157
       objectReference: {fileID: 0}
     - target: {fileID: 5151141205086813545, guid: c02dba420892767418590cdcad8e7341, type: 3}
       propertyPath: m_SortingLayer

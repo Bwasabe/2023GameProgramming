@@ -1,0 +1,76 @@
+
+MOB_skeleton_04.png
+size: 255,166
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm1_L
+  rotate: false
+  xy: 2, 12
+  size: 36, 15
+  orig: 36, 24
+  offset: 0, 2
+  index: -1
+arm2_1L
+  rotate: false
+  xy: 101, 20
+  size: 66, 32
+  orig: 66, 32
+  offset: 0, 0
+  index: -1
+arm_R
+  rotate: false
+  xy: 2, 29
+  size: 97, 135
+  orig: 97, 135
+  offset: 0, 0
+  index: -1
+arrow
+  rotate: false
+  xy: 40, 2
+  size: 126, 16
+  orig: 126, 16
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 195, 78
+  size: 51, 86
+  orig: 51, 86
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 101, 54
+  size: 92, 110
+  orig: 92, 110
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: false
+  xy: 195, 31
+  size: 18, 45
+  orig: 18, 45
+  offset: 0, 0
+  index: -1
+leg_R
+  rotate: false
+  xy: 215, 31
+  size: 18, 45
+  orig: 18, 45
+  offset: 0, 0
+  index: -1
+line1
+  rotate: false
+  xy: 248, 40
+  size: 5, 124
+  orig: 27, 124
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 169, 3
+  size: 77, 26
+  orig: 79, 31
+  offset: 0, 2
+  index: -1

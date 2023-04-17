@@ -1,0 +1,68 @@
+{ "skeleton": { "images": "D:/작업/Super Knight/캐릭터/teo/spine/work/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
+	{ "name": "backpack", "bone": "root", "attachment": "backpack" },
+	{ "name": "backpack entry", "bone": "root", "attachment": "backpack entry" },
+	{ "name": "leg_R", "bone": "root", "attachment": "leg_R" },
+	{ "name": "pants_R", "bone": "root", "attachment": "pants_R" },
+	{ "name": "leg_L", "bone": "root", "attachment": "leg_L" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "pants_L", "bone": "root", "attachment": "pants_L" },
+	{ "name": "arm_R", "bone": "root", "attachment": "arm_R" },
+	{ "name": "arm_L", "bone": "root", "attachment": "arm_L" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "eye_close", "bone": "root", "attachment": "eye_close" },
+	{ "name": "eye_open", "bone": "root", "attachment": "eye_open" },
+	{ "name": "hat", "bone": "root", "attachment": "hat" }
+],
+"skins": {
+	"default": {
+		"shadow": {
+			"shadow": { "x": 80.5, "y": -177.5, "width": 137, "height": 33 }
+		},
+		"backpack": {
+			"backpack": { "x": 117.5, "y": -92, "width": 141, "height": 124 }
+		},
+		"backpack entry": {
+			"backpack entry": { "x": 166, "y": -46.5, "width": 48, "height": 43 }
+		},
+		"leg_R": {
+			"leg_R": { "x": 50.5, "y": -160.5, "width": 27, "height": 45 }
+		},
+		"pants_R": {
+			"pants_R": { "x": 56.5, "y": -155, "width": 45, "height": 20 }
+		},
+		"leg_L": {
+			"leg_L": { "x": 108, "y": -161.5, "width": 26, "height": 45 }
+		},
+		"body": {
+			"body": { "x": 80, "y": -98.5, "width": 144, "height": 121 }
+		},
+		"pants_L": {
+			"pants_L": { "x": 103.5, "y": -156, "width": 45, "height": 20 }
+		},
+		"arm_R": {
+			"arm_R": { "x": 19, "y": -86, "width": 40, "height": 42 }
+		},
+		"arm_L": {
+			"arm_L": { "x": 127.5, "y": -94.5, "width": 51, "height": 45 }
+		},
+		"head": {
+			"head": { "x": 80, "y": -47, "width": 116, "height": 70 }
+		},
+		"eye_close": {
+			"eye_close": { "x": 71, "y": -38.5, "width": 64, "height": 11 }
+		},
+		"eye_open": {
+			"eye_open": { "x": 71, "y": -38.5, "width": 64, "height": 11 }
+		},
+		"hat": {
+			"hat": { "x": 80, "y": -15, "width": 134, "height": 32 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

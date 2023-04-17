@@ -1,0 +1,83 @@
+
+MOB_golem_01.png
+size: 510,545
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+golem/arm1_L
+  rotate: false
+  xy: 390, 60
+  size: 97, 144
+  orig: 97, 144
+  offset: 0, 0
+  index: -1
+golem/arm1_R
+  rotate: false
+  xy: 401, 397
+  size: 107, 146
+  orig: 118, 146
+  offset: 11, 0
+  index: -1
+golem/arm2_L
+  rotate: false
+  xy: 351, 206
+  size: 142, 189
+  orig: 144, 189
+  offset: 2, 0
+  index: -1
+golem/arm2_R
+  rotate: false
+  xy: 185, 104
+  size: 164, 175
+  orig: 164, 175
+  offset: 0, 0
+  index: -1
+golem/body
+  rotate: false
+  xy: 2, 281
+  size: 209, 262
+  orig: 209, 262
+  offset: 0, 0
+  index: -1
+golem/eye_light
+  rotate: false
+  xy: 222, 10
+  size: 166, 92
+  orig: 166, 92
+  offset: 0, 0
+  index: -1
+golem/head
+  rotate: false
+  xy: 2, 66
+  size: 181, 213
+  orig: 186, 213
+  offset: 5, 0
+  index: -1
+golem/leg_L
+  rotate: false
+  xy: 213, 288
+  size: 64, 107
+  orig: 65, 107
+  offset: 1, 0
+  index: -1
+golem/leg_R
+  rotate: false
+  xy: 279, 292
+  size: 64, 103
+  orig: 64, 103
+  offset: 0, 0
+  index: -1
+golem/rock
+  rotate: false
+  xy: 213, 397
+  size: 186, 146
+  orig: 200, 200
+  offset: 8, 21
+  index: -1
+golem/shadow
+  rotate: false
+  xy: 2, 2
+  size: 218, 62
+  orig: 218, 62
+  offset: 0, 0
+  index: -1

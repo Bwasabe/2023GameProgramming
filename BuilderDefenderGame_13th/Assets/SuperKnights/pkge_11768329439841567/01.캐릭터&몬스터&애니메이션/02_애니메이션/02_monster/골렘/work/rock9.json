@@ -1,0 +1,48 @@
+{ "skeleton": { "images": "D:/작업/Super Knight/몬스터/골렘/spine/work/01/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "rock1", "bone": "root", "attachment": "rock1" },
+	{ "name": "rock2", "bone": "root", "attachment": "rock2" },
+	{ "name": "rock3", "bone": "root", "attachment": "rock3" },
+	{ "name": "rock4", "bone": "root", "attachment": "rock4" },
+	{ "name": "rock5", "bone": "root", "attachment": "rock5" },
+	{ "name": "rock6", "bone": "root", "attachment": "rock6" },
+	{ "name": "rock7", "bone": "root", "attachment": "rock7" },
+	{ "name": "rock8", "bone": "root", "attachment": "rock8" },
+	{ "name": "rock9", "bone": "root", "attachment": "rock9" }
+],
+"skins": {
+	"default": {
+		"rock1": {
+			"rock1": { "x": 93.5, "y": -63, "width": 189, "height": 128 }
+		},
+		"rock2": {
+			"rock2": { "x": 45.5, "y": -43.5, "width": 93, "height": 89 }
+		},
+		"rock3": {
+			"rock3": { "x": 79, "y": -36.5, "width": 72, "height": 59 }
+		},
+		"rock4": {
+			"rock4": { "x": 123.5, "y": -45, "width": 107, "height": 92 }
+		},
+		"rock5": {
+			"rock5": { "x": 91.5, "y": -85, "width": 161, "height": 84 }
+		},
+		"rock6": {
+			"rock6": { "x": 142, "y": -84, "width": 88, "height": 82 }
+		},
+		"rock7": {
+			"rock7": { "x": 32, "y": -95, "width": 64, "height": 60 }
+		},
+		"rock8": {
+			"rock8": { "x": 75, "y": -63.5, "width": 128, "height": 109 }
+		},
+		"rock9": {
+			"rock9": { "x": 113.5, "y": -63, "width": 149, "height": 126 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

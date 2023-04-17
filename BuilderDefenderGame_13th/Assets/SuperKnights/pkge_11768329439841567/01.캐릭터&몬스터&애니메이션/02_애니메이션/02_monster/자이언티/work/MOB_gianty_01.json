@@ -1,0 +1,80 @@
+{ "skeleton": { "images": "D:/작업/Super Knight/몬스터/자이언티/spine/01/work/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Layer 11", "bone": "root" },
+	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
+	{ "name": "arm1_R", "bone": "root", "attachment": "arm1_R" },
+	{ "name": "arm2_R", "bone": "root", "attachment": "arm2_R" },
+	{ "name": "leg_R", "bone": "root", "attachment": "leg_R" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "leg_L", "bone": "root", "attachment": "leg_L" },
+	{ "name": "chain2", "bone": "root", "attachment": "chain2" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "eye3", "bone": "root", "attachment": "eye3" },
+	{ "name": "eye2", "bone": "root", "attachment": "eye2" },
+	{ "name": "eye1", "bone": "root", "attachment": "eye1" },
+	{ "name": "mouth1", "bone": "root", "attachment": "mouth1" },
+	{ "name": "mouth2", "bone": "root", "attachment": "mouth2" },
+	{ "name": "chain1", "bone": "root", "attachment": "chain1" },
+	{ "name": "arm1_L", "bone": "root", "attachment": "arm1_L" },
+	{ "name": "arm2_L", "bone": "root", "attachment": "arm2_L" }
+],
+"skins": {
+	"default": {
+		"Layer 11": {
+			"Layer 11": { "x": 273.5, "y": -208, "width": 549, "height": 418 }
+		},
+		"shadow": {
+			"shadow": { "x": 336, "y": -391, "width": 296, "height": 52 }
+		},
+		"arm1_R": {
+			"arm1_R": { "x": 254.5, "y": -159.5, "width": 145, "height": 159 }
+		},
+		"arm2_R": {
+			"arm2_R": { "x": 139, "y": -211.5, "width": 278, "height": 203 }
+		},
+		"leg_R": {
+			"leg_R": { "x": 274, "y": -344, "width": 84, "height": 100 }
+		},
+		"body": {
+			"body": { "x": 341.5, "y": -197, "width": 253, "height": 312 }
+		},
+		"leg_L": {
+			"leg_L": { "x": 389.5, "y": -354, "width": 79, "height": 80 }
+		},
+		"chain2": {
+			"chain2": { "x": 341.5, "y": -194, "width": 261, "height": 270 }
+		},
+		"head": {
+			"head": { "x": 320, "y": -63.5, "width": 118, "height": 129 }
+		},
+		"eye3": {
+			"eye3": { "x": 301, "y": -64, "width": 66, "height": 12 }
+		},
+		"eye2": {
+			"eye2": { "x": 299, "y": -63.5, "width": 62, "height": 13 }
+		},
+		"eye1": {
+			"eye1": { "x": 299, "y": -63.5, "width": 62, "height": 13 }
+		},
+		"mouth1": {
+			"mouth1": { "x": 291, "y": -106.5, "width": 40, "height": 23 }
+		},
+		"mouth2": {
+			"mouth2": { "x": 300.5, "y": -103, "width": 69, "height": 26 }
+		},
+		"chain1": {
+			"chain1": { "x": 376, "y": -128.5, "width": 170, "height": 149 }
+		},
+		"arm1_L": {
+			"arm1_L": { "x": 461, "y": -165, "width": 138, "height": 130 }
+		},
+		"arm2_L": {
+			"arm2_L": { "x": 476, "y": -262.5, "width": 144, "height": 231 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

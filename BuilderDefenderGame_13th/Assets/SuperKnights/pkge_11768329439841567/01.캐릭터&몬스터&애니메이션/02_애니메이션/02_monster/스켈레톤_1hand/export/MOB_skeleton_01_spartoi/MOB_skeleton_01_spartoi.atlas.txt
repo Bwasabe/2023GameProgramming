@@ -1,0 +1,111 @@
+
+MOB_skeleton_01_spartoi.png
+size: 295,147
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+spartoi/arm1_L
+  rotate: false
+  xy: 262, 11
+  size: 19, 38
+  orig: 19, 38
+  offset: 0, 0
+  index: -1
+spartoi/arm1_R
+  rotate: false
+  xy: 262, 51
+  size: 21, 40
+  orig: 21, 40
+  offset: 0, 0
+  index: -1
+spartoi/arm2_L
+  rotate: false
+  xy: 121, 7
+  size: 28, 56
+  orig: 28, 56
+  offset: 0, 0
+  index: -1
+spartoi/arm2_R
+  rotate: false
+  xy: 223, 40
+  size: 37, 51
+  orig: 37, 51
+  offset: 0, 0
+  index: -1
+spartoi/body
+  rotate: false
+  xy: 84, 65
+  size: 38, 80
+  orig: 38, 80
+  offset: 0, 0
+  index: -1
+spartoi/head
+  rotate: false
+  xy: 151, 2
+  size: 70, 66
+  orig: 70, 66
+  offset: 0, 0
+  index: -1
+spartoi/helmet front
+  rotate: false
+  xy: 2, 50
+  size: 80, 95
+  orig: 81, 96
+  offset: 1, 0
+  index: -1
+spartoi/helmet rear
+  rotate: false
+  xy: 223, 119
+  size: 70, 26
+  orig: 70, 26
+  offset: 0, 0
+  index: -1
+spartoi/helmet_guard
+  rotate: false
+  xy: 223, 5
+  size: 23, 33
+  orig: 25, 33
+  offset: 1, 0
+  index: -1
+spartoi/leg_L
+  rotate: false
+  xy: 67, 7
+  size: 17, 41
+  orig: 17, 41
+  offset: 0, 0
+  index: -1
+spartoi/leg_R
+  rotate: false
+  xy: 48, 6
+  size: 17, 42
+  orig: 17, 42
+  offset: 0, 0
+  index: -1
+spartoi/manteau
+  rotate: false
+  xy: 86, 2
+  size: 33, 61
+  orig: 33, 61
+  offset: 0, 0
+  index: -1
+spartoi/shadow
+  rotate: false
+  xy: 223, 93
+  size: 69, 24
+  orig: 72, 29
+  offset: 2, 2
+  index: -1
+spartoi/shield
+  rotate: false
+  xy: 2, 2
+  size: 44, 46
+  orig: 44, 47
+  offset: 0, 0
+  index: -1
+spartoi/weapon
+  rotate: false
+  xy: 124, 70
+  size: 85, 75
+  orig: 85, 75
+  offset: 0, 0
+  index: -1

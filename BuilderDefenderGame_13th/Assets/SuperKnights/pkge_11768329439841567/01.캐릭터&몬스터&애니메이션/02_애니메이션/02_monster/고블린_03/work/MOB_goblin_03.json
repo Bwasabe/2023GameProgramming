@@ -1,0 +1,60 @@
+{ "skeleton": { "images": "D:/작업/Super Knight/몬스터/고블린/spine/03/work/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
+	{ "name": "arm_R", "bone": "root", "attachment": "arm_R" },
+	{ "name": "wand", "bone": "root", "attachment": "wand" },
+	{ "name": "leg_R", "bone": "root", "attachment": "leg_R" },
+	{ "name": "leg_L", "bone": "root", "attachment": "leg_L" },
+	{ "name": "cloak2", "bone": "root", "attachment": "cloak2" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "cloak1", "bone": "root", "attachment": "cloak1" },
+	{ "name": "arm_L", "bone": "root", "attachment": "arm_L" },
+	{ "name": "ear_R", "bone": "root", "attachment": "ear_R" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "ear_L", "bone": "root", "attachment": "ear_L" }
+],
+"skins": {
+	"default": {
+		"shadow": {
+			"shadow": { "x": 116, "y": -196.5, "width": 100, "height": 31 }
+		},
+		"arm_R": {
+			"arm_R": { "x": 77, "y": -134.5, "width": 50, "height": 69 }
+		},
+		"wand": {
+			"wand": { "x": 58, "y": -142, "width": 118, "height": 92 }
+		},
+		"leg_R": {
+			"leg_R": { "x": 102, "y": -172.5, "width": 22, "height": 53 }
+		},
+		"leg_L": {
+			"leg_L": { "x": 128, "y": -174.5, "width": 22, "height": 53 }
+		},
+		"cloak2": {
+			"cloak2": { "x": 149.5, "y": -120.5, "width": 51, "height": 79 }
+		},
+		"body": {
+			"body": { "x": 123, "y": -130, "width": 96, "height": 104 }
+		},
+		"cloak1": {
+			"cloak1": { "x": 111.5, "y": -95.5, "width": 81, "height": 47 }
+		},
+		"arm_L": {
+			"arm_L": { "x": 144, "y": -133, "width": 46, "height": 76 }
+		},
+		"ear_R": {
+			"ear_R": { "x": 58, "y": -61.5, "width": 52, "height": 39 }
+		},
+		"head": {
+			"head": { "x": 108, "y": -49, "width": 94, "height": 100 }
+		},
+		"ear_L": {
+			"ear_L": { "x": 161, "y": -61, "width": 64, "height": 44 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

@@ -1,0 +1,62 @@
+
+MOB_slime_01_green.png
+size: 199,199
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dark/body
+  rotate: false
+  xy: 2, 29
+  size: 114, 83
+  orig: 114, 83
+  offset: 0, 0
+  index: -1
+dark/eye_dark_close
+  rotate: false
+  xy: 118, 55
+  size: 50, 46
+  orig: 51, 46
+  offset: 0, 0
+  index: -1
+dark/eye_dark_open
+  rotate: false
+  xy: 118, 151
+  size: 52, 46
+  orig: 55, 46
+  offset: 3, 0
+  index: -1
+green/body
+  rotate: false
+  xy: 2, 114
+  size: 114, 83
+  orig: 114, 83
+  offset: 0, 0
+  index: -1
+green/eye_green_close
+  rotate: false
+  xy: 124, 7
+  size: 50, 46
+  orig: 51, 46
+  offset: 0, 0
+  index: -1
+green/eye_green_open
+  rotate: false
+  xy: 118, 103
+  size: 52, 46
+  orig: 55, 46
+  offset: 3, 0
+  index: -1
+green/shadow
+  rotate: false
+  xy: 2, 2
+  size: 120, 25
+  orig: 130, 30
+  offset: 6, 2
+  index: -1
+dark/shadow
+  rotate: false
+  xy: 2, 2
+  size: 120, 25
+  orig: 130, 30
+  offset: 6, 2
+  index: -1

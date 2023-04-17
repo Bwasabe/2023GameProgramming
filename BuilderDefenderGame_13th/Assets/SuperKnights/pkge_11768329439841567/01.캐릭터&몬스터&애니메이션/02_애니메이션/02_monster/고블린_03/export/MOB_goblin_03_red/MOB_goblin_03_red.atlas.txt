@@ -1,0 +1,90 @@
+
+MOB_goblin_03_red.png
+size: 397,153
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ear_L
+  rotate: false
+  xy: 186, 2
+  size: 64, 44
+  orig: 64, 44
+  offset: 0, 0
+  index: -1
+ear_R
+  rotate: false
+  xy: 252, 7
+  size: 52, 39
+  orig: 52, 39
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: false
+  xy: 306, 18
+  size: 22, 53
+  orig: 22, 53
+  offset: 0, 0
+  index: -1
+leg_R
+  rotate: false
+  xy: 330, 18
+  size: 22, 53
+  orig: 22, 53
+  offset: 0, 0
+  index: -1
+red/arm_L
+  rotate: false
+  xy: 354, 4
+  size: 38, 77
+  orig: 44, 77
+  offset: 6, 0
+  index: -1
+red/arm_R
+  rotate: false
+  xy: 345, 83
+  size: 50, 68
+  orig: 50, 68
+  offset: 0, 0
+  index: -1
+red/body
+  rotate: false
+  xy: 214, 48
+  size: 77, 103
+  orig: 94, 104
+  offset: 0, 1
+  index: -1
+red/cloak1
+  rotate: false
+  xy: 104, 5
+  size: 80, 46
+  orig: 80, 46
+  offset: 0, 0
+  index: -1
+red/cloak2
+  rotate: false
+  xy: 293, 73
+  size: 50, 78
+  orig: 50, 78
+  offset: 0, 0
+  index: -1
+red/head
+  rotate: false
+  xy: 120, 53
+  size: 92, 98
+  orig: 92, 98
+  offset: 0, 0
+  index: -1
+red/wand
+  rotate: false
+  xy: 2, 60
+  size: 116, 91
+  orig: 116, 91
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 27
+  size: 100, 31
+  orig: 100, 31
+  offset: 0, 0
+  index: -1

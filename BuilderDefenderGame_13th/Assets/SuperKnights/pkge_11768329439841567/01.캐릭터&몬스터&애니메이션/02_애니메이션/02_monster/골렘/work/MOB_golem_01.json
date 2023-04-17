@@ -1,0 +1,48 @@
+{ "skeleton": { "images": "D:/작업/Super Knight/몬스터/골렘/spine/01/images/" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "shadow", "bone": "root", "attachment": "shadow" },
+	{ "name": "arm1_R", "bone": "root", "attachment": "arm1_R" },
+	{ "name": "arm2_R", "bone": "root", "attachment": "arm2_R" },
+	{ "name": "leg_R", "bone": "root", "attachment": "leg_R" },
+	{ "name": "leg_L", "bone": "root", "attachment": "leg_L" },
+	{ "name": "body", "bone": "root", "attachment": "body" },
+	{ "name": "head", "bone": "root", "attachment": "head" },
+	{ "name": "arm1_L", "bone": "root", "attachment": "arm1_L" },
+	{ "name": "arm2_L", "bone": "root", "attachment": "arm2_L" }
+],
+"skins": {
+	"default": {
+		"shadow": {
+			"shadow": { "x": 250, "y": -358, "width": 218, "height": 62 }
+		},
+		"arm1_R": {
+			"arm1_R": { "x": 140, "y": -124, "width": 118, "height": 146 }
+		},
+		"arm2_R": {
+			"arm2_R": { "x": 99.0000000000001, "y": -253.5, "width": 164, "height": 175 }
+		},
+		"leg_R": {
+			"leg_R": { "x": 202, "y": -307.5, "width": 64, "height": 103 }
+		},
+		"leg_L": {
+			"leg_L": { "x": 277.5, "y": -309.5, "width": 65, "height": 107 }
+		},
+		"body": {
+			"body": { "x": 246.5, "y": -156, "width": 209, "height": 262 }
+		},
+		"head": {
+			"head": { "x": 203, "y": -129.5, "width": 186, "height": 213 }
+		},
+		"arm1_L": {
+			"arm1_L": { "x": 362.5, "y": -125, "width": 97, "height": 144 }
+		},
+		"arm2_L": {
+			"arm2_L": { "x": 377, "y": -268.5, "width": 144, "height": 189 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}
