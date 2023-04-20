@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnemyTrail
+  m_Name: PurpleSlimeTrail
   m_Shader: {fileID: -6465566751694194690, guid: f03486ec7e099c547b96a277a7d8e08c, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -53,7 +53,7 @@ Material:
     - _EnableExternalAlpha: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 9.016197, g: 0.14765213, b: 0, a: 0}
+    - _EmissionColor: {r: 0.115062736, g: 0, b: 0.5635123, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

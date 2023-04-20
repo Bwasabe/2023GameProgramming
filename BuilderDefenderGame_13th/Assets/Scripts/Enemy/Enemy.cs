@@ -59,6 +59,23 @@ public class Enemy : MonoBehaviour
     {
         HandleMovement();
         HandleTargetting();
+        Flip();
+    }
+
+    private void Flip()
+    {
+        if(targetTransform == null)return;
+        
+        
+        Vector3 scale = transform.localScale;
+        float scaleX = Mathf.Abs(scale.x);
+
+        if(targetTransform.position.x > transform.position.x)
+        {
+            scale.x = scaleX * -1f;
+        }
+        
+        transform.localScale = scale;
     }
 
     private void HandleMovement()
