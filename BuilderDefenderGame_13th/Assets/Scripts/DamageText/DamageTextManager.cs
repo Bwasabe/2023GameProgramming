@@ -13,9 +13,10 @@ public class DamageTextManager : MonoSingleton<DamageTextManager>
 
     private readonly Dictionary<TextType, BaseText> _textDict = new();
 
-    
-    private void Start()
+
+    protected override void Start()
     {
+        base.Start();
         InitText();
     }
 

@@ -4,14 +4,21 @@ using UnityEngine;
 
 public static class UtilClass
 {
-    public static Camera mainCamera;
-    public static Vector3 GetMouseWorldPosition()
+    public static Camera MainCam
     {
-        if (mainCamera == null) { mainCamera = Camera.main; }
-        Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPosition.z = 0f;
-        return mouseWorldPosition;
+        get
+        {
+            if (_mainCam == null)
+            {
+                _mainCam = Camera.main;
+            }
+            return _mainCam;
+        }
+
     }
+    private static Camera _mainCam;
+    
+    public static Vector2 MousePos => MainCam.ScreenToWorldPoint(Input.mousePosition);
 
     public static Vector3 GetRandomDir()
     {

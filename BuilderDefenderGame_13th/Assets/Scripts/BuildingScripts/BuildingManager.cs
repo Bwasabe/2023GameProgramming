@@ -45,18 +45,18 @@ public class BuildingManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0)&&!EventSystem.current.IsPointerOverGameObject())
         {
             if (activeBuildingType != null)
-                if (CanSpawnBuilding(activeBuildingType, UtilClass.GetMouseWorldPosition(), out string errorMessage))
+                if (CanSpawnBuilding(activeBuildingType, UtilClass.MousePos, out string errorMessage))
                 {
                     if (ResourceManager.Instance.CanAfford(activeBuildingType.constructionResourceCostArray))
                     {
                         ResourceManager.Instance.SpendResources(activeBuildingType.constructionResourceCostArray);
                         //Instantiate(activeBuildingType.prefab, UtilClass.GetMouseWorldPosition(), Quaternion.identity);
-                        BuildingConstruction.Create(UtilClass.GetMouseWorldPosition(),activeBuildingType);
+                        BuildingConstruction.Create(UtilClass.MousePos,activeBuildingType);
                         SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingPlaced);
                     }
                     else
                     {
-                        TooltipUI.Instance.Show("ÀÚ¿ø ºÎÁ· : " + activeBuildingType.GetConstructioonResourceCostString(),new TooltipUI.TooltipTimer { timer = 2f });
+                        TooltipUI.Instance.Show("ìì› ë¶€ì¡± : " + activeBuildingType.GetConstructioonResourceCostString(),new TooltipUI.TooltipTimer { timer = 2f });
                     }
                 }
                 else
@@ -87,7 +87,7 @@ public class BuildingManager : MonoBehaviour
         bool isAreaClear = collider2DArray.Length == 0;
         if (!isAreaClear)
         {
-            errorMessage = "°Ç¹°À» ³õÀ» ¼ö ¾ø´Â °÷ÀÔ´Ï´Ù.";
+            errorMessage = "ê±´ë¬¼ì„ ë†“ì„ ìˆ˜ ì—†ëŠ” ê³³ì…ë‹ˆë‹¤.";
             return false;
         }
         collider2DArray = Physics2D.OverlapCircleAll(position, buildingtype.minConstructionRadius);
@@ -99,7 +99,7 @@ public class BuildingManager : MonoBehaviour
             {
                 if (buildingTypeHolder.buildingType == buildingtype)
                 {
-                    errorMessage = "°°Àº À¯ÇüÀÇ °Ç¹°ÀÌ ÁÖº¯¿¡ ÀÖ½À´Ï´Ù.";
+                    errorMessage = "ê°™ì€ ìœ í˜•ì˜ ê±´ë¬¼ì´ ì£¼ë³€ì— ìˆìŠµë‹ˆë‹¤.";
                     return false;
                 }
             }
@@ -111,7 +111,7 @@ public class BuildingManager : MonoBehaviour
 
             if (nearbyResourceAmount == 0)
             {
-                errorMessage = "±ÙÃ³¿¡ ¸®¼Ò½º ³ëµå°¡ ¾ø½À´Ï´Ù.";
+                errorMessage = "ê·¼ì²˜ì— ë¦¬ì†ŒìŠ¤ ë…¸ë“œê°€ ì—†ìŠµë‹ˆë‹¤.";
                 return false;
             }
         }
@@ -128,7 +128,7 @@ public class BuildingManager : MonoBehaviour
                 return true;
             }
         }
-        errorMessage = "´Ù¸¥ °Ç¹°ÀÌ ÁÖº¯¿¡ ÀÖ¾î¾ß ÇÕ´Ï´Ù.";
+        errorMessage = "ë‹¤ë¥¸ ê±´ë¬¼ì´ ì£¼ë³€ì— ìˆì–´ì•¼ í•©ë‹ˆë‹¤.";
         return false;
     }
 

@@ -43,7 +43,7 @@ public class BuildingGhost : MonoBehaviour
 
     void Update()
     {
-        transform.position = UtilClass.GetMouseWorldPosition();
+        transform.position = UtilClass.MousePos;
     }
 
     private void Show(Sprite ghostSprite)

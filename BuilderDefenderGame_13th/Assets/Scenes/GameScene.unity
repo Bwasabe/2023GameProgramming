@@ -2099,7 +2099,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1381227171}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 29.80868
+    OrthographicSize: 10.01265
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -7102,7 +7102,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 29.80868
+  orthographic size: 10.01265
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7837,6 +7837,174 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4888965237327212955, guid: 3bd470fbe9fa37d4288475af7ffd33ab, type: 3}
   m_PrefabInstance: {fileID: 549977846}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &550805211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 550805213}
+  - component: {fileID: 550805212}
+  m_Layer: 0
+  m_Name: DamageTextManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &550805212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550805211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06572b3096f836040b168406b7218f20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textContainer:
+  - textType: 0
+    textPrefab: {fileID: 2398489923962424151, guid: fea4d23b543a2c64baab4d35a46ce581, type: 3}
+    textData:
+      rid: 7225897418496671756
+  - textType: 1
+    textPrefab: {fileID: 1405976602843733877, guid: 9dea405bf8e45194fa00fe17f9edab83, type: 3}
+    textData:
+      rid: 7225897418496671757
+  - textType: 2
+    textPrefab: {fileID: 78826521653942288, guid: a007ce7cf3f024840a02d71c067546ff, type: 3}
+    textData:
+      rid: 7225897418496671758
+  - textType: 3
+    textPrefab: {fileID: 4964063142393499527, guid: 8d28e87db60ce314296e5d60fe08a2e5, type: 3}
+    textData:
+      rid: 7225897418496671759
+  - textType: 4
+    textPrefab: {fileID: 5085372003128340998, guid: 23a2610ca18f0d84c9d4349b1a193a3b, type: 3}
+    textData:
+      rid: 7225897418496671760
+  - textType: 5
+    textPrefab: {fileID: 983253983519937945, guid: 023b4610dc586d3479bd851607ac8a08, type: 3}
+    textData:
+      rid: 7225897418496671761
+  references:
+    version: 2
+    RefIds:
+    - rid: 7225897418496671756
+      type: {class: EnemyDamagedTextData, ns: , asm: Assembly-CSharp}
+      data:
+        <DefaultTextSize>k__BackingField: 50
+        <TextDisplayDuration>k__BackingField: 0.5
+        <TextAlpha>k__BackingField: 0.2
+        <FadeScaleDuration>k__BackingField: 0.5
+        <RandomPosTextData>k__BackingField:
+          <RadiusMin>k__BackingField: -1
+          <RadiusMax>k__BackingField: 1
+        <AnimationCurve>k__BackingField:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        <TextHeight>k__BackingField: 1
+        <HeightDuration>k__BackingField: 0.5
+    - rid: 7225897418496671757
+      type: {class: HealTextData, ns: , asm: Assembly-CSharp}
+      data:
+        <DefaultTextSize>k__BackingField: 51.64
+        <TextDisplayDuration>k__BackingField: 0.5
+        <TextAlpha>k__BackingField: 0.2
+        <FadeScaleDuration>k__BackingField: 0.5
+        <RandomPositionTextData>k__BackingField:
+          <RadiusMin>k__BackingField: -1
+          <RadiusMax>k__BackingField: 1
+    - rid: 7225897418496671758
+      type: {class: EnemyDamagedTextData, ns: , asm: Assembly-CSharp}
+      data:
+        <DefaultTextSize>k__BackingField: 50
+        <TextDisplayDuration>k__BackingField: 0.5
+        <TextAlpha>k__BackingField: 0.2
+        <FadeScaleDuration>k__BackingField: 0.5
+        <RandomPosTextData>k__BackingField:
+          <RadiusMin>k__BackingField: -1
+          <RadiusMax>k__BackingField: 1
+        <AnimationCurve>k__BackingField:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        <TextHeight>k__BackingField: 0.5
+        <HeightDuration>k__BackingField: 0.5
+    - rid: 7225897418496671759
+      type: {class: OreTextData, ns: , asm: Assembly-CSharp}
+      data:
+        <DefaultTextSize>k__BackingField: 50
+        <UpTextData>k__BackingField:
+          <TextHeight>k__BackingField: 1
+          <HeightDuration>k__BackingField: 0.5
+        <TextAlpha>k__BackingField: 0
+        <AlphaDelay>k__BackingField: 0
+    - rid: 7225897418496671760
+      type: {class: PlayerDamagedTextData, ns: , asm: Assembly-CSharp}
+      data:
+        <DefaultTextSize>k__BackingField: 50
+        <TextDisplayDuration>k__BackingField: 0.5
+        <TextAlpha>k__BackingField: 0.2
+        <FadeScaleDuration>k__BackingField: 0.5
+        <RandomPositionTextData>k__BackingField:
+          <RadiusMin>k__BackingField: -1
+          <RadiusMax>k__BackingField: 1
+    - rid: 7225897418496671761
+      type: {class: RandomAngleTextData, ns: , asm: Assembly-CSharp}
+      data:
+        <DefaultTextSize>k__BackingField: 50
+        <AnimationDuration>k__BackingField: 0.5
+        <TextAlpha>k__BackingField: 0
+        <AngleMin>k__BackingField: 10
+        <AngleMax>k__BackingField: 30
+        <RadiusMin>k__BackingField: 1.5
+        <RadiusMax>k__BackingField: 2
+        <JumpPowerMin>k__BackingField: 0.4
+        <JumpPowerMax>k__BackingField: 0.7
+        <JumpNum>k__BackingField: 1
+--- !u!4 &550805213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550805211}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.8798685, y: 0.28749165, z: -0.19136602}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &554924571
 PrefabInstance:
   m_ObjectHideFlags: 0
