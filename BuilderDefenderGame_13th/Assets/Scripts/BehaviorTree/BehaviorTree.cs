@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public abstract class BehaviourTree : MonoBehaviour, IUpdateAble, IGetComponentAble
+public abstract class BehaviorTree : MonoBehaviour, IUpdateAble
 {
     public abstract BT_Variable Variable{ get; set; }
 
