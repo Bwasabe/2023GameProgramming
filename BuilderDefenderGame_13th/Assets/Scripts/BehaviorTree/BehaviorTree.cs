@@ -1,55 +1,46 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public abstract class BehaviorTree : MonoBehaviour, IUpdateAble
+public abstract class BehaviorTree : MonoBehaviour
 {
-    public abstract BT_Variable Variable{ get; set; }
+    public readonly DataController<BT_Variable> DataController = new();
 
     protected BT_Node _root;
 
     public bool IsStop{ get; set; } = false;
-    
+
+    protected virtual void Awake() {
+        InitAllData();
+    }
 
     protected virtual void Start()
     {
         _root = SetupTree();
     }
 
-    protected virtual void OnEnable()
+    private void InitAllData()
     {
-        //UpdateManager.Instance.RegisterObject(this);
-    }
+        Type myType = this.GetType();
+        BindingFlags flag = BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance;
+        FieldInfo[] fieldInfos = myType.GetFields(flag);
 
-    protected void OnDisable()
-    {
-        //UpdateManager.Instance?.UnRegisterObject(this);
-    }
+        foreach (var field in fieldInfos)
+        {
+            BT_Variable data = field.GetValue(this) as BT_Variable;
 
-    public void FlipLeft()
-    {
-        Vector3 scale = transform.localScale;
-        float scaleX = Mathf.Abs(scale.x);
-        
-        scale.x = scaleX * -1f;
-        
-        transform.localScale = scale;
-    }
-
-    public void FlipRight()
-    {
-        Vector3 scale = transform.localScale;
-        float scaleX = Mathf.Abs(scale.x);
-        
-        scale.x = scaleX;
-        
-        transform.localScale = scale;
+            if(data != null)
+            {
+                DataController.AddData(data);
+            }
+        }
     }
     
-
     protected abstract BT_Node SetupTree();
+
     public void OnUpdate()
     {
         if(!IsStop)
