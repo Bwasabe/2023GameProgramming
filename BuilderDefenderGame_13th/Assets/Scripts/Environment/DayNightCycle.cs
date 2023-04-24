@@ -6,9 +6,11 @@ using UnityEngine.Rendering.Universal;
 
 public class DayNightCycle : MonoBehaviour
 {
-    [SerializeField] private Gradient gradient;
+    [SerializeField] private Gradient _gradient;
 
-    [SerializeField] private float secondsPerDay = 10f;
+    [SerializeField] private AnimationCurve _intensityCurve;
+
+    [SerializeField] private float _secondsPerDay = 10f;
 
     private Light2D light2D;
     
@@ -18,13 +20,14 @@ public class DayNightCycle : MonoBehaviour
     private void Awake()
     {
         light2D = GetComponent<Light2D>();
-        dayTimeSpeed = 1 / secondsPerDay;
+        dayTimeSpeed = 1 / _secondsPerDay;
     }
 
     private void Update()
     {
         dayTime += Time.deltaTime * dayTimeSpeed;
-        light2D.color = gradient.Evaluate(dayTime % 1f);
+        light2D.color = _gradient.Evaluate(dayTime % 1f);
+        light2D.intensity = _intensityCurve.Evaluate(dayTime % 1f);
     }
 
 

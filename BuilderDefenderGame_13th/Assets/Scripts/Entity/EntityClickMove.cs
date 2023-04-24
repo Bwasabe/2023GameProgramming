@@ -14,15 +14,7 @@ public class EntityClickMove : BT_Node
 
     protected override void OnUpdate()
     {
-        Vector2 dir = _variable.MovePos - _tree.transform.position;
-
-        // TODO: EntityClickCondition에서 걸러줘야함
-        if(dir.magnitude <= _variable.MoveSpeed * Time.deltaTime)
-        {
-            _variable.IsClickMoving = false;
-            UpdateState = UpdateState.None;
-        }
-
+        Vector2 dir = _variable.ClickMovePos - _tree.transform.position;
         dir.Normalize();
 
         _variable.Rigidbody.velocity = dir * _variable.MoveSpeed;
@@ -33,7 +25,7 @@ public class EntityClickMove : BT_Node
 
 public partial class EntityVariable
 {
-    public Vector3 MovePos { get; set; }
+    public Vector3 ClickMovePos { get; set; }
 
     [field: SerializeField] public float MoveSpeed { get; private set; }
 }

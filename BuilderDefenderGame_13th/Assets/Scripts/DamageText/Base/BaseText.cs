@@ -9,6 +9,7 @@ public abstract class BaseText : MonoBehaviour
     
     protected TMP_Text _text;
     
+    
     protected Color _defaultColor;
     
     protected virtual void Awake()
@@ -51,7 +52,7 @@ public abstract class BaseText : MonoBehaviour
     protected void ResetText()
     {
         ResetValue();
-        PoolManager.Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     protected virtual void ResetValue()
@@ -68,3 +69,11 @@ public class BaseTextData
 {
     [field: SerializeField] public float DefaultTextSize{ get; private set; } = 50f;
 }
+
+
+
+
+
+
+
+

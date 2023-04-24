@@ -13,6 +13,11 @@ public abstract class Entity : BehaviorTree
         _entityVariable.Rigidbody = GetComponent<Rigidbody2D>();
     }
 
+    public void SetTarget(Vector3 movePos)
+    {
+        _entityVariable.ClickMovePos = movePos;
+    }
+
     public void FlipLeft()
     {
         Vector3 scale = transform.localScale;

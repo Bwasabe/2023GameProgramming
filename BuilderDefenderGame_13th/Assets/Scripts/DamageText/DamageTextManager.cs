@@ -56,7 +56,7 @@ public class DamageTextManager : MonoSingleton<DamageTextManager>
     {
         if (_textDict.TryGetValue(type, out BaseText textPrefab))
         {
-            BaseText text = PoolManager.Instantiate(textPrefab.gameObject).GetComponent<BaseText>();
+            BaseText text = Instantiate(textPrefab.gameObject).GetComponent<BaseText>();
             return text;
         }
         else
