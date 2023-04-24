@@ -14,8 +14,12 @@ public class ObjectSelected : MonoBehaviour
     private Camera _camera;
 
     private Vector2 _size;
+
+    private List<Entity> _entityList;
+
     private void Awake()
     {
+        _entityList = new();
         _camera = Camera.main;
         _selectedImage = GetComponentInChildren<SpriteRenderer>();
     }
@@ -44,21 +48,34 @@ public class ObjectSelected : MonoBehaviour
         {
             _selectedImage.gameObject.SetActive(false);
             _isClicked = false;
-            
+
+            _entityList.Clear();    
             SetTarget(_nowPos);
+        }
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            Vector3 inputPos = _camera.ScreenToWorldPoint(Input.mousePosition);
+            foreach(var entity in _entityList)
+            {
+                entity.SetTarget(inputPos);
+            }
         }
     }
 
     private void SetTarget(Vector3 pos)
     {
         Vector2 point = new Vector2(_startPos.x + (_nowPos.x - _startPos.x) * 0.5f, _startPos.y + (_nowPos.y - _startPos.y) * 0.5f);
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(point, _size, 0f);
+        Vector2 size = new Vector2(Mathf.Abs(_size.x), Math.Abs(_size.y));
+        
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(point, size, 0f);
+
 
         foreach (Collider2D collider in colliders)
         {
             if(collider.TryGetComponent<Entity>(out Entity entity))
             {
-                entity.SetTarget(pos);
+                _entityList.Add(entity);
             }
         }
     }

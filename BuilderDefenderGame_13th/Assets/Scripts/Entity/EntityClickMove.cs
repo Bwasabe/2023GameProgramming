@@ -14,6 +14,7 @@ public class EntityClickMove : BT_Node
 
     protected override void OnUpdate()
     {
+        Debug.Log("움직이는 중");
         Vector2 dir = _variable.ClickMovePos - _tree.transform.position;
         dir.Normalize();
 

@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class Entity : BehaviorTree
 {
     [SerializeField]
-    private EntityVariable _entityVariable;
+    protected EntityVariable _entityVariable;
 
     protected override void Awake() {
         base.Awake();
@@ -15,6 +15,7 @@ public abstract class Entity : BehaviorTree
 
     public void SetTarget(Vector3 movePos)
     {
+        _entityVariable.IsClickMoving = true;
         _entityVariable.ClickMovePos = movePos;
     }
 

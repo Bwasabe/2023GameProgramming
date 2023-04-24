@@ -25,23 +25,22 @@ public abstract class BehaviorTree : MonoBehaviour
     private void InitAllData()
     {
         Type myType = this.GetType();
-        BindingFlags flag = BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance;
+        BindingFlags flag = BindingFlags.NonPublic | BindingFlags.Public 
+                            | BindingFlags.Static | BindingFlags.Instance | BindingFlags.FlattenHierarchy;
         FieldInfo[] fieldInfos = myType.GetFields(flag);
 
         foreach (var field in fieldInfos)
         {
-            BT_Variable data = field.GetValue(this) as BT_Variable;
-
-            if(data != null)
+            if(field.GetValue(this) is BT_Variable variable)
             {
-                DataController.AddData(data);
+                DataController.AddData(variable);
             }
         }
     }
     
     protected abstract BT_Node SetupTree();
 
-    public void OnUpdate()
+    public void Update()
     {
         if(!IsStop)
         {
