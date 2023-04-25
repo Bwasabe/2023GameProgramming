@@ -1,10 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using EventManagers;
 using UnityEngine;
 
 public class ObjectSelected : MonoBehaviour
 {
+    public const string ARRIVED_CLICKPOS = "ArrivedClickPos";
+    [SerializeField]
+    private GameObject _clickPosObject;
+    
     private SpriteRenderer _selectedImage;
 
     private Vector2 _startPos;
@@ -22,6 +27,16 @@ public class ObjectSelected : MonoBehaviour
         _entityList = new();
         _camera = Camera.main;
         _selectedImage = GetComponentInChildren<SpriteRenderer>();
+    }
+
+    private void Start()
+    {
+        EventManager.StartListening(ARRIVED_CLICKPOS,ArriveObjectInClickPos);
+    }
+
+    private void ArriveObjectInClickPos()
+    {
+        _clickPosObject.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -56,6 +71,12 @@ public class ObjectSelected : MonoBehaviour
         if(Input.GetMouseButtonDown(1))
         {
             Vector3 inputPos = _camera.ScreenToWorldPoint(Input.mousePosition);
+            inputPos.z = 0f;
+
+            if(_entityList.Count <= 0) return;
+            _clickPosObject.gameObject.SetActive(true);
+            _clickPosObject.transform.position = inputPos;
+            
             foreach(var entity in _entityList)
             {
                 entity.SetTarget(inputPos);
