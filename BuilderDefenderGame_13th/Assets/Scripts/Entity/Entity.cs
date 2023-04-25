@@ -16,7 +16,13 @@ public abstract class Entity : BehaviorTree
     public void SetTarget(Vector3 movePos)
     {
         _entityVariable.IsClickMoving = true;
+        _entityVariable.IsSelected = true;
         _entityVariable.ClickMovePos = movePos;
+    }
+
+    public void RemoveSelected()
+    {
+        _entityVariable.IsSelected = false;
     }
 
     public void FlipLeft()
