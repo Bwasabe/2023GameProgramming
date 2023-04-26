@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IEnemyAble
 {
     public static Enemy Create(Vector3 position)
     {
@@ -17,8 +17,12 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D enemyRigidbody2D;
     private HealthSystem healthSystem;
 
+    public HealthSystem HealthSystem => healthSystem;
+
     private float lookForTargetTimer;
     private float lookForTargetTimerMax = .2f;
+
+    public bool IsPlayerObject {get;set;}
 
     private void Awake()
     {

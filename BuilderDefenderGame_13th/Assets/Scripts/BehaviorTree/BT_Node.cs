@@ -64,7 +64,7 @@ public abstract class BT_Node
     
     protected virtual void OnUpdate()
     {
-        
+        UpdateState = UpdateState.Exit;
     }
     
     protected virtual void OnExit()
