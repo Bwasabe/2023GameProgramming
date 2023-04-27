@@ -792,7 +792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64192813206f4a679de0fa14c35a1068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damagePerSec: 5
+  _damagePerSec: 25
   _textOffset: {x: 0, y: 5, z: 0}
 --- !u!1 &7436574148251652957
 GameObject:

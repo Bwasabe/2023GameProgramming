@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41cf4e99652296d409a2fbb6ebefaf66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfPlayerDieParticle: {fileID: 4850068476918138423, guid: 1047d03d8b006ca4d98231e93b8db52e, type: 3}
   pfPlayerProjectile: {fileID: 7992246164131386164, guid: 335a6f711b12e7d4b945e867af024abb, type: 3}
   pfEnemy: {fileID: 1534886281830733143, guid: fa81982f460080b41949c9ba618b175a, type: 3}
   pfEnemyDieParticles: {fileID: 4850068476918138423, guid: fa53ff3e077270e4d8a679c8fa7de07f, type: 3}

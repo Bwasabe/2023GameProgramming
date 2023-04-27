@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [RequireComponent(typeof(HealthSystem))]
 public class PlayerTimeToDie : MonoBehaviour
@@ -15,6 +16,15 @@ public class PlayerTimeToDie : MonoBehaviour
     {
         _healthSystem = GetComponent<HealthSystem>();
     }
+
+    private void Start()
+    {
+        _healthSystem.OnDied += PlayerDieParticle;
+    }
+    private void PlayerDieParticle(object sender, EventArgs e)
+    {
+        Instantiate(GameAssets.Instance.pfPlayerDieParticle, transform.position, Quaternion.identity);
+    }
     private void Update()
     {
         if(DayNightCycle.Instance.DayCycle == DayCycle.Night) return;
@@ -26,4 +36,6 @@ public class PlayerTimeToDie : MonoBehaviour
             _healthSystem.Damage(_damagePerSec);
         }
     }
+    
+    
 }
