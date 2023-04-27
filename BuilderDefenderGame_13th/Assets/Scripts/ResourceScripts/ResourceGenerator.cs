@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ResourceGenerator : MonoBehaviour
 {
+    [SerializeField]
+    private Vector3 _textOffset;
+    
     public static int GetNearbyResourceAmount(ResourceGeneratorData resourceGeneratorData, Vector3 position)
     {
         Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(position, resourceGeneratorData.resourceDetectionRadius);
@@ -57,6 +60,7 @@ public class ResourceGenerator : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
+            DamageTextManager.Instance.GetDamageText(resourceGeneratorData._textType, transform.position + _textOffset, 1).ShowText();
             timer += timerMax;
             ResourceManager.Instance.AddResource(resourceGeneratorData.resourceType, 1);
         }

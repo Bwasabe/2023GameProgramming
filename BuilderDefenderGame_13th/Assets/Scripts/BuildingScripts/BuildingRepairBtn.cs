@@ -23,7 +23,7 @@ public class BuildingRepairBtn : MonoBehaviour
             }
             else
             {
-                TooltipUI.Instance.Show("ÀÚ¿øÀÌ ºÎÁ·ÇÕ´Ï´Ù.", new TooltipUI.TooltipTimer { timer = .2f });
+                TooltipUI.Instance.Show("ìì›ì´ ë¶€ì¡±í•©ë‹ˆë‹¤.", new TooltipUI.TooltipTimer { timer = .2f });
             }
         });
     }

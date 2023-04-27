@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class ArrowProjectile : MonoBehaviour
 {
-    public static ArrowProjectile Create(Vector3 position, Enemy enemy)
+    public static ArrowProjectile Create(Vector3 position, Transform target)
     {
         Transform arrowProjectileTransform = Instantiate(GameAssets.Instance.pfArrowProjectile, position, Quaternion.identity);
         ArrowProjectile arrowProjectile = arrowProjectileTransform.GetComponent<ArrowProjectile>();
-        arrowProjectile.SetTarget(enemy);
+        arrowProjectile.SetTarget(target);
 
         return arrowProjectile;
     }
 
-    private Enemy targetEnemy;
+    private Transform targetEnemy;
     private Vector3 lastMoveDir;
     private float timeToDie = 2f;
 
@@ -33,7 +33,7 @@ public class ArrowProjectile : MonoBehaviour
 
         
         float moveSpeed = 20f;
-        transform.position += moveDir * moveSpeed * Time.deltaTime;
+        transform.position += moveSpeed * Time.deltaTime * moveDir;
         transform.eulerAngles = new Vector3(0, 0, UtilClass.GetAngleFromVector(moveDir));
 
         timeToDie -= Time.deltaTime;
@@ -43,7 +43,7 @@ public class ArrowProjectile : MonoBehaviour
         }
     }
 
-    private void SetTarget(Enemy targetEnemy)
+    private void SetTarget(Transform targetEnemy)
     {
         this.targetEnemy = targetEnemy;
     }
@@ -54,6 +54,7 @@ public class ArrowProjectile : MonoBehaviour
         if (enemy != null)
         {
             int damageAmount = 10;
+            DamageTextManager.Instance.GetDamageText(TextType.EnemyDamaged, enemy.transform.position, damageAmount ).ShowText();
             enemy.GetComponent<HealthSystem>().Damage(damageAmount);
             Destroy(gameObject);
         }

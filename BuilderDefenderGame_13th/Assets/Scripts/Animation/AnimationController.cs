@@ -8,14 +8,14 @@ public class AnimationController<T> : MonoBehaviour where T : Enum
 {
     private readonly int STATE_HASH = Animator.StringToHash("State");
 
-    public Animator Animator{get; init;}
+    private Animator _animator;
 
     private T _currentAnimationState;
     
     public void SetAnimationState(T animationState)
     {
         _currentAnimationState = animationState;
-        Animator.SetInteger(STATE_HASH, Define.EnumToInt(animationState));
+        _animator.SetInteger(STATE_HASH, Define.EnumToInt(animationState));
     }
 
     public void TrySetAnimationState(T animationState)
@@ -28,7 +28,7 @@ public class AnimationController<T> : MonoBehaviour where T : Enum
     }
     
     protected virtual void Awake() {
-        Animator animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         
     }
 

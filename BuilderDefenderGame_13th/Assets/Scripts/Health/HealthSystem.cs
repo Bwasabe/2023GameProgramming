@@ -22,7 +22,6 @@ public class HealthSystem : MonoBehaviour
     {
         healthAmount -= damage;
         healthAmount = Mathf.Clamp(healthAmount, 0, healthAmountMax);
-        DamageTextManager.Instance.GetDamageText(TextType.EnemyDamaged, transform.position ,damage).ShowText();
 
         OnDamaged?.Invoke(this, EventArgs.Empty);
         if (IsDead())

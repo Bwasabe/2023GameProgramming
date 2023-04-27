@@ -15,7 +15,7 @@ public class DamageTextEditor : Editor
         _damageTextManager = (DamageTextManager)target;
         GUILayout.BeginHorizontal();
         {
-            if(GUILayout.Button("Refresh"))
+            if(GUILayout.Button("GetAllTextData"))
             {
                 _damageTextManager.ResetTextContainer();
                 List<BaseText> damageTexts = GetAllDamageTextInProject();
@@ -24,6 +24,10 @@ public class DamageTextEditor : Editor
                     int index = i;
                     _damageTextManager.AddTextContainer(new TextContainer(damageTexts[i], damageTexts[i].TextData, (TextType)index)); 
                 }
+                RefreshTextContainer();            
+            }
+            if(GUILayout.Button("RefreshTextContainer"))
+            {
                 RefreshTextContainer();            
             }
             if(GUILayout.Button("Apply"))

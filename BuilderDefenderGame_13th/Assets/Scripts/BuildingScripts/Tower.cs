@@ -69,7 +69,7 @@ public class Tower : MonoBehaviour
             shootTimer += shootTimerMax;
             if (targetEnemy != null)
             {
-                ArrowProjectile.Create(projectileSpawnPosition, targetEnemy);
+                ArrowProjectile.Create(projectileSpawnPosition, targetEnemy.transform);
             }
         } 
     }

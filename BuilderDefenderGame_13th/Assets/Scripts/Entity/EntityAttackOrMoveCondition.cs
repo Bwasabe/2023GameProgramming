@@ -12,7 +12,7 @@ public class EntityAttackOrMoveCondition : BT_Condition
     }
 
     // Children 0 : Attack
-    // Children 1 : Move
+    // Children 1 : Idle
     protected override void OnUpdate()
     {
         Vector3 distance = _variable.Target.position - _tree.transform.position;

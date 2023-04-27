@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour, IEnemyAble
     private Rigidbody2D enemyRigidbody2D;
     private HealthSystem healthSystem;
 
+    [SerializeField] private ResourceAmount[] _dieResources;
+
     public HealthSystem HealthSystem => healthSystem;
 
     private float lookForTargetTimer;
@@ -52,6 +54,11 @@ public class Enemy : MonoBehaviour, IEnemyAble
 
     private void HealthSystem_OnDied(object sender, System.EventArgs e)
     {
+        foreach (ResourceAmount resourceAmount in _dieResources)
+        {
+            ResourceManager.Instance.AddResource(resourceAmount.resourceType, resourceAmount.amount);
+        }
+        
         SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);
         CinemachineShake.Instance.ShakeCamera(7f, .15f);
         ChromaticAberrationEffect.Instance.SetWeight(.5f);
@@ -114,6 +121,7 @@ public class Enemy : MonoBehaviour, IEnemyAble
         {
             HealthSystem healthSystem = building.GetComponent<HealthSystem>();
             healthSystem.Damage(10);
+            DamageTextManager.Instance.GetDamageText(TextType.BuildingDamageText, this.healthSystem.transform.position, 10).ShowText();
             this.healthSystem.Damage(999);
         }
     }

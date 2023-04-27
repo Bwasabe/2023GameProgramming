@@ -33,6 +33,10 @@ public class ObjectSelected : MonoBehaviour
     {
         EventManager.StartListening(ARRIVED_CLICKPOS,ArriveObjectInClickPos);
     }
+    private void OnDestroy()
+    {
+        EventManager.StopListening(ARRIVED_CLICKPOS,ArriveObjectInClickPos);
+    }
 
     private void ArriveObjectInClickPos()
     {
@@ -110,11 +114,19 @@ public class ObjectSelected : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(inputPos, Vector3.forward);
 
-        if(hit.collider == null) return;
+        if(hit.collider == null)
+        {
+            _clickPosObject.SetActive(false);
+            return;
+        }
+        
         if(hit.collider.TryGetComponent<Entity>(out Entity value) )
         {
+            value.AddTarget();
             _entityList.Add(value);
         }
+        else
+            _clickPosObject.SetActive(false);
     }
 
     private void SetTargets()
@@ -129,8 +141,14 @@ public class ObjectSelected : MonoBehaviour
         {
             if(collider.TryGetComponent<Entity>(out Entity entity))
             {
+                entity.AddTarget();
                 _entityList.Add(entity);
             }
+        }
+
+        if(_entityList.Count <= 0)
+        {
+            _clickPosObject.SetActive(false);
         }
     }
 }

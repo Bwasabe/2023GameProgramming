@@ -21,7 +21,7 @@ public class EntityClickMoveCondition : BT_Condition
         }
         Vector3 distance = _variable.ClickMovePos - _tree.transform.position;
 
-        if(distance.magnitude <= _variable.MoveSpeed * Time.deltaTime)
+        if(distance.magnitude <= _variable.MoveSpeed * Time.deltaTime + 1f)
         {
             _variable.Rigidbody.velocity = Vector2.zero;
             _variable.IsClickMoving = false;

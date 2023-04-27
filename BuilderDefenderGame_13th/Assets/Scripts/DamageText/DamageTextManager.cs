@@ -40,6 +40,11 @@ public class DamageTextManager : MonoSingleton<DamageTextManager>
         _textContainer.Clear();
     }
 
+    public void RefreshContainer()
+    {
+        
+    }
+
     private void InitText()
     {
         foreach (TextContainer container in _textContainer)

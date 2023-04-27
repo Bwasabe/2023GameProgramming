@@ -76,9 +76,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingLayerID: -326734439
+  m_SortingLayer: 1
+  m_SortingOrder: 50
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &2029408202405922628
 MonoBehaviour:
@@ -111,13 +111,13 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
+  m_enableVertexGradient: 1
+  m_colorMode: 2
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 1, g: 0.14508255, b: 0, a: 1}
+    topRight: {r: 1, g: 0.14508255, b: 0, a: 1}
+    bottomLeft: {r: 0.16397955, g: 0, b: 0.2830189, a: 1}
+    bottomRight: {r: 0.16397955, g: 0, b: 0.2830189, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -218,9 +218,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textData:
-    <DefaultTextSize>k__BackingField: 50
+    <DefaultTextSize>k__BackingField: 80
+    <FadeTextData>k__BackingField:
+      <TextAlpha>k__BackingField: 0.2
+      <AlphaDuration>k__BackingField: 0.5
     <AnimationDuration>k__BackingField: 0.5
-    <TextAlpha>k__BackingField: 0
     <AngleMin>k__BackingField: 10
     <AngleMax>k__BackingField: 30
     <RadiusMin>k__BackingField: 1.5

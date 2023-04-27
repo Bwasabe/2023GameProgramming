@@ -16,6 +16,7 @@ public class GameAssets : MonoBehaviour
             return instance;
         }
     }
+    public Transform pfPlayerProjectile;
     public Transform pfEnemy;
     public Transform pfEnemyDieParticles;
     public Transform pfArrowProjectile;

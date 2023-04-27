@@ -22,6 +22,7 @@ public class BuildingConstruction : MonoBehaviour
     private Material constructionMaterial;
     private float constructionTimer;
     private float constructionTimerMax;
+    private static readonly int Progress = Shader.PropertyToID("_Progress");
 
 
     private void Awake()
@@ -37,7 +38,7 @@ public class BuildingConstruction : MonoBehaviour
     {
         constructionTimer -= Time.deltaTime;
 
-        constructionMaterial.SetFloat("_Progress", GetConstructionTimerNormalized());
+        constructionMaterial.SetFloat(Progress, GetConstructionTimerNormalized());
 
         if (constructionTimer <= 0f)
         {

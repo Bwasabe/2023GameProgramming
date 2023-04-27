@@ -1,11 +1,11 @@
 ﻿public enum TextType
 {
-    Critical,
-    Heal,
+    GoldText,
     EnemyDamaged,
-    Ore,
-    PlayerDamaged,
-    TickDamaged,
+    BuildingDamageText,
+    StoneText,
+    PlayerTickDamaged,
+    WoodText,
 }
 
 // Type

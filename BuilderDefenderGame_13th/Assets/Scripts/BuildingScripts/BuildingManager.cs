@@ -12,6 +12,7 @@ public class BuildingManager : MonoBehaviour
 
     public class OnActiveBuildingTypeEventArgs :EventArgs {
         public BuildingTypeSO buildingType;
+        public bool isPlayerUI;
     }
 
 
@@ -50,7 +51,6 @@ public class BuildingManager : MonoBehaviour
                     if (ResourceManager.Instance.CanAfford(activeBuildingType.constructionResourceCostArray))
                     {
                         ResourceManager.Instance.SpendResources(activeBuildingType.constructionResourceCostArray);
-                        //Instantiate(activeBuildingType.prefab, UtilClass.GetMouseWorldPosition(), Quaternion.identity);
                         BuildingConstruction.Create(UtilClass.MousePos,activeBuildingType);
                         SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingPlaced);
                     }
@@ -67,10 +67,10 @@ public class BuildingManager : MonoBehaviour
         }
     }
 
-    public void SetActiveBuildingType(BuildingTypeSO buildingType)
+    public void SetActiveBuildingType(BuildingTypeSO buildingType, bool isPlayerUI = false)
     {
         activeBuildingType = buildingType;
-        OnActiveBuildingTypeChanged?.Invoke(this, new OnActiveBuildingTypeEventArgs { buildingType = activeBuildingType }); ;
+        OnActiveBuildingTypeChanged?.Invoke(this, new OnActiveBuildingTypeEventArgs { buildingType = activeBuildingType, isPlayerUI = isPlayerUI}); ;
     }
 
     public BuildingTypeSO GetActiveBuildingType()

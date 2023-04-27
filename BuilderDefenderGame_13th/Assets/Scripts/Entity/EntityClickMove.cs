@@ -6,8 +6,10 @@ public class EntityClickMove : BT_Node
 {
     private EntityVariable _variable;
 
-    public EntityClickMove(BehaviorTree tree, List<BT_Node> children = null) : base(tree, children)
+    private Entity _entity;
+    public EntityClickMove(Entity tree, List<BT_Node> children = null) : base(tree, children)
     {
+        _entity = tree;
         _variable = tree.DataController.GetData<EntityVariable>();
     }
 
@@ -17,6 +19,9 @@ public class EntityClickMove : BT_Node
         Vector2 dir = _variable.ClickMovePos - _tree.transform.position;
         dir.Normalize();
 
+        _entity.Flip(dir);
+
+        
         _variable.Rigidbody.velocity = dir * _variable.MoveSpeed;
 
         _nodeResult = NodeResult.SUCCESS;
@@ -25,7 +30,7 @@ public class EntityClickMove : BT_Node
 
 public partial class EntityVariable
 {
-    public Vector3 ClickMovePos { get; set; }
+    public Vector3 ClickMovePos{ get; set; }
 
-    [field: SerializeField] public float MoveSpeed { get; private set; }
+    [field: SerializeField] public float MoveSpeed{ get; private set; }
 }

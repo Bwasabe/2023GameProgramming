@@ -6,8 +6,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 
-// TODO: TickDamageText는 아직 수정 안함
-public class TickText : BaseText
+public class TickText : BaseText, IFadeTextAble
 {
     [SerializeField]
     private RandomAngleTextData _textData;
@@ -19,6 +18,14 @@ public class TickText : BaseText
         set {
             _textData = value as RandomAngleTextData;
         }
+    }
+
+    private IFadeTextAble _iFadeTextAble;
+
+    protected override void Awake()
+    {
+        _iFadeTextAble = this;
+        base.Awake();
     }
 
 
@@ -50,8 +57,8 @@ public class TickText : BaseText
         Sequence sequence = DOTween.Sequence();
 
         sequence.Append(_text.transform.DOJump(dir, jumpPower, _textData.JumpNum, _textData.AnimationDuration));
-        sequence.Join(_text.DOFade(_textData.TextAlpha, _textData.AnimationDuration));
 
+        sequence.Append(_iFadeTextAble.FadeTweener(_text, _textData.FadeTextData.TextAlpha, _textData.FadeTextData.AlphaDuration));
         sequence.AppendCallback(ResetText);
         
         return this;
@@ -107,26 +114,17 @@ public class TickText : BaseText
 [Serializable]
 public class RandomAngleTextData : BaseTextData
 {
-    [field: SerializeField]
-    public float AnimationDuration{ get; private set;} = 0.5f;
-    [field: SerializeField]
-    public float TextAlpha{ get; private set;} = 0f;
+    [field: SerializeField]public FadeTextData FadeTextData{ get; private set; }
+    [field: SerializeField] public float AnimationDuration{ get; private set;} = 0.5f;
 
-    [field: SerializeField]
-    public float AngleMin{ get; private set;} = 10f;
-    [field: SerializeField]
-    public float AngleMax{ get; private set;} = 30f;
+    [field: SerializeField] public float AngleMin{ get; private set;} = 10f;
+    [field: SerializeField] public float AngleMax{ get; private set;} = 30f;
 
-    [field: SerializeField]
-    public float RadiusMin{ get; private set;} = 1.5f;
-    [field: SerializeField]
-    public float RadiusMax{ get; private set;} = 2f;
+    [field: SerializeField] public float RadiusMin{ get; private set;} = 1.5f;
+    [field: SerializeField] public float RadiusMax{ get; private set;} = 2f;
 
-    [field: SerializeField]
-    public float JumpPowerMin{ get; private set; } = 0.4f;
-    [field: SerializeField]
-    public float JumpPowerMax{ get; private set;} = 0.7f;
+    [field: SerializeField] public float JumpPowerMin{ get; private set; } = 0.4f;
+    [field: SerializeField] public float JumpPowerMax{ get; private set;} = 0.7f;
 
-    [field: SerializeField]
-    public int JumpNum{ get; private set; } = 1;
+    [field: SerializeField] public int JumpNum{ get; private set; } = 1;
 }
