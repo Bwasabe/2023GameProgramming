@@ -58,6 +58,8 @@ public class Enemy : MonoBehaviour, IEnemyAble
         {
             ResourceManager.Instance.AddResource(resourceAmount.resourceType, resourceAmount.amount);
         }
+
+        DamageTextManager.Instance.GetDamageText(TextType.WoodText, transform.position, 1).ShowText();
         
         SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);
         CinemachineShake.Instance.ShakeCamera(7f, .15f);
