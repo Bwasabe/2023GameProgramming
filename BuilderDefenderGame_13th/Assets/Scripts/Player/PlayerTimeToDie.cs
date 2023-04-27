@@ -15,7 +15,7 @@ public class PlayerTimeToDie : MonoBehaviour
     private void Awake()
     {
         _healthSystem = GetComponent<HealthSystem>();
-    }ㄸ
+    }
 
     private void Start()
     {
