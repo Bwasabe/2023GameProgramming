@@ -19,7 +19,7 @@ public class PlayerTimeToDie : MonoBehaviour
 
     private void Start()
     {
-        _healthSystem.OnDied += PlayerDieParticle;
+        _healthSystem.OnDied += PlayerDieParticle; 
     }
     private void PlayerDieParticle(object sender, EventArgs e)
     {
