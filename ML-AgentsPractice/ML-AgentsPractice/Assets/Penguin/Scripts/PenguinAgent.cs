@@ -36,12 +36,11 @@ public class PenguinAgent : Agent
 
         forwardAmount = actions.DiscreteActions[0];
 
-        if(actions.DiscreteActions[1] == 1f)
+        if(actions.DiscreteActions[1] == 1)
         {
             turnAmount = -1f;
-            
         }
-        else if(actions.DiscreteActions[1] == 2f)
+        else if(actions.DiscreteActions[1] == 2)
         {
             turnAmount = 1f;
         }

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Baby
   - Fish
+  - AG_Enemy
+  - DEAD_ZONE
+  - TARGET
   layers:
   - Default
   - TransparentFX

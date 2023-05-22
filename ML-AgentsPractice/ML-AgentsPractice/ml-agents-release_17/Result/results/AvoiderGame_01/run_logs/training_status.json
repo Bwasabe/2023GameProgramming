@@ -1,0 +1,65 @@
+{
+    "AvoiderGame": {
+        "checkpoints": [
+            {
+                "steps": 300056,
+                "file_path": "results\\AvoiderGame_01\\AvoiderGame\\AvoiderGame-300056.onnx",
+                "reward": 26.260576949669765,
+                "creation_time": 1684390751.5291688,
+                "auxillary_file_paths": [
+                    "results\\AvoiderGame_01\\AvoiderGame\\AvoiderGame-300056.pt"
+                ]
+            },
+            {
+                "steps": 300056,
+                "file_path": "results\\AvoiderGame_01\\AvoiderGame\\AvoiderGame-300056.onnx",
+                "reward": null,
+                "creation_time": 1684390937.6452823,
+                "auxillary_file_paths": [
+                    "results\\AvoiderGame_01\\AvoiderGame\\AvoiderGame-300056.pt"
+                ]
+            },
+            {
+                "steps": 499997,
+                "file_path": "results\\AvoiderGame_01\\AvoiderGame\\AvoiderGame-499997.onnx",
+                "reward": 58.98292695022211,
+                "creation_time": 1684391404.5270007,
+                "auxillary_file_paths": [
+                    "results\\AvoiderGame_01\\AvoiderGame\\AvoiderGame-499997.pt"
+                ]
+            },
+            {
+                "steps": 999125,
+                "file_path": "results\\AvoiderGame_01\\AvoiderGame\\AvoiderGame-999125.onnx",
+                "reward": 143.50500156879426,
+                "creation_time": 1684392414.419517,
+                "auxillary_file_paths": [
+                    "results\\AvoiderGame_01\\AvoiderGame\\AvoiderGame-999125.pt"
+                ]
+            },
+            {
+                "steps": 1000125,
+                "file_path": "results\\AvoiderGame_01\\AvoiderGame\\AvoiderGame-1000125.onnx",
+                "reward": 160.47619167963663,
+                "creation_time": 1684392414.5555634,
+                "auxillary_file_paths": [
+                    "results\\AvoiderGame_01\\AvoiderGame\\AvoiderGame-1000125.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1000125,
+            "file_path": "results\\AvoiderGame_01\\AvoiderGame.onnx",
+            "reward": 160.47619167963663,
+            "creation_time": 1684392414.5555634,
+            "auxillary_file_paths": [
+                "results\\AvoiderGame_01\\AvoiderGame\\AvoiderGame-1000125.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
