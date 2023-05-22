@@ -1,0 +1,29 @@
+{
+    "Mummy": {
+        "checkpoints": [
+            {
+                "steps": 314646,
+                "file_path": "results\\Mummy_01\\Mummy\\Mummy-314646.onnx",
+                "reward": -0.967818114974282,
+                "creation_time": 1684736156.1912613,
+                "auxillary_file_paths": [
+                    "results\\Mummy_01\\Mummy\\Mummy-314646.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 314646,
+            "file_path": "results\\Mummy_01\\Mummy.onnx",
+            "reward": -0.967818114974282,
+            "creation_time": 1684736156.1912613,
+            "auxillary_file_paths": [
+                "results\\Mummy_01\\Mummy\\Mummy-314646.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
