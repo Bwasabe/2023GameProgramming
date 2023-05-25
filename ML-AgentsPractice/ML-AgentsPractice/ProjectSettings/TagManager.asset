@@ -9,6 +9,14 @@ TagManager:
   - AG_Enemy
   - DEAD_ZONE
   - TARGET
+  - WALL
+  - GOOD_ITEM
+  - BAD_ITEM
+  - Hint
+  - Red
+  - Blue
+  - Black
+  - Green
   layers:
   - Default
   - TransparentFX
